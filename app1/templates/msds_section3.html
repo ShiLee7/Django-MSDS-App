@@ -1,0 +1,108 @@
+{% extends "msds_base_form.html" %}
+{% load static i18n %}
+
+{% block body %}
+<div class="section-header">
+    <h3>{% trans "Sección 3: Composición/Información sobre los ingredientes" %}</h3>
+
+    <p class="section-info">{% trans "Por favor, proporcione los detalles acerca de la composición/información sobre los ingredientes, a continuación." %}</p>
+
+    <div class="section-container text-center">
+        <form method="post">
+            {% csrf_token %}
+            {{ wizard.management_form }}
+
+            <!-- Substance or Mixture -->
+            <div class="form-group">
+                <label class="form-label" for="substance-or-mixture">{% trans "Sustancia o Mezcla" %}</label>
+                {{ wizard.form.substance_or_mixture }}
+            </div>
+
+            <!-- Chemical Name -->
+            <div class="form-group">
+                <label class="form-label" for="{{ wizard.form.chemical_name.id_for_label }}">{% trans "Nombre Químico" %}</label>
+                <input class="form-control" name="{{ wizard.form.chemical_name.html_name }}" value="{{ wizard.form.initial.chemical_name }}"></input>
+            </div>
+
+            <!-- Synonyms -->
+            <div class="form-group">
+                <label class="form-label" for="{{ wizard.form.synonyms.id_for_label }}">{% trans "Sinónimos" %}</label>
+                <select name="{{ wizard.form.synonyms.html_name }}" id="synonyms-dropdown" class="form-control">
+                    {% for synonym in synonyms %}
+                        <option value="{{ synonym }}" {% if synonym == wizard.form.initial.chemical_name %}selected{% endif %}>
+                            {{ synonym }}
+                        </option>
+                    {% endfor %}
+                    <option value="custom" id="custom-option">{% trans "Otro..." %}</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="custom-synonym-container">
+                <label class="form-label" for="synonyms">{% trans "Sinónimo Personalizado" %}</label>
+                <input class="form-control" id="custom-synonym"></input>
+            </div>
+
+            <!-- CAS Number -->
+            <div class="form-group">
+                <label class="form-label" for="section3-cas-number">{% trans "Número CAS" %}</label>
+                <input class="form-control" value="{{ cas_number }}"></input>
+            </div>
+
+            <!-- REACH Number -->
+            <div class="form-group">
+                <label class="form-label" for="section3-reach-no">{% trans "Número REACH" %}</label>
+                <input class="form-control" value="{{ reach_no }}"></input>
+            </div>
+
+            <!-- Index Number -->
+            <div class="form-group">
+                <label class="form-label" for="section3-index-number">{% trans "Número de Índice" %}</label>
+                <input class="form-control" value="{{ index_number }}"></input>
+            </div>
+
+            <!-- Concentration -->
+            <div class="form-group">
+                <label class="form-label" for="{{ wizard.form.concentration.id_for_label }}">
+                    {% trans "Concentración" %}
+                </label>
+                <input 
+                    class="form-control" 
+                    name="not-hidden-cn"
+                />
+                {{ wizard.form.concentration.as_hidden }}
+                <div id="concentration-fields"></div>
+                <button type="button" id="add-concentration" class="btn btn-custom">
+                    {% trans "Agregar un Campo de Concentración" %}
+                </button>
+            </div>
+            
+
+            <!-- Unique Identifiers -->
+            <div class="form-group">
+                <label class="form-label" for="other_unique-identifiers">{% trans "Otros Identificadores Únicos" %}</label>
+                {{ wizard.form.other_unique_identifiers }}
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container">
+                {% for step in wizard.steps.all %}
+                    <button type="submit" name="wizard_goto_step" value="{{ step }}" 
+                            class="btn pagination-btn {% if step == wizard.steps.current %}active{% endif %}">
+                        {{ forloop.counter }} <!-- Display step number -->
+                    </button>
+                {% endfor %}
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+                {% if wizard.steps.prev %}
+                    <button type="submit" name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="btn btn-custom">{% trans "Anterior" %}</button>
+                {% endif %}
+                <button type="submit" class="btn btn-custom">{% if wizard.steps.next %}{% trans "Siguiente" %}{% else %}{% trans "Enviar" %}{% endif %}</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'app1/cn.js' %}"></script>
+    <script src="{% static 'app1/c_syn.js' %}"></script>
+{% endblock %}

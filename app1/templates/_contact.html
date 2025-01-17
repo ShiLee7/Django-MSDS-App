@@ -1,0 +1,70 @@
+{% load static i18n %}
+
+<!-- Contact -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="text-center roboto-medium color-dorado mb-5">{% trans "Contáctanos" %}</h2>
+        
+        <!-- Introduction Text -->
+        <p class="text-center mb-4 roboto-medium">
+            {% blocktrans %}¿Tienes un proyecto en mente? Nos encantaría ayudarte a hacerlo realidad. Para obtener un presupuesto o recibir asesoría personalizada, contáctanos por:{% endblocktrans %}
+        </p>
+        
+        <!-- Contact Information -->
+        <div class="text-center mb-5">
+            <p class="mb-2 roboto-medium">
+                <strong>{% trans "E-mail:" %}</strong> <a href="mailto:info@extracsol.com" class="color-dorado contact-link">info@extracsol.com</a>
+            </p>
+            <p class="mb-0 roboto-medium">
+                <strong>{% trans "Tel:" %}</strong> <a href="tel:+50688007218" class="color-dorado contact-link">(506) 8800 7218</a>
+            </p>
+        </div>
+
+        <!-- Contact Form (optional) -->
+        <form>
+            <!-- Form Fields -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" placeholder="{% trans 'Nombre' %}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="email" class="form-control" placeholder="{% trans 'Correo electrónico' %}" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="{% trans 'Asunto' %}" required>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="{% trans 'Mensaje' %}" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom">{% trans "Enviar Mensaje" %}</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    <section id="social-media" class="py-3">
+        <div class="container text-center">
+            <div class="d-flex justify-content-center">
+                <a href="https://facebook.com/yourpage" target="_blank" class="mx-3" aria-label="{% trans 'Facebook' %}">
+                    <img src="{% static 'images/icons8-facebook-logo-50.png' %}" alt="{% trans 'Facebook' %}" class="social-icon">
+                </a>
+                <img src="{% static 'images/sun.svg' %}" alt="{% trans 'Petal Pattern' %}" class="mx-3 svg-image">
+                <a href="https://instagram.com/yourpage" target="_blank" class="mx-3" aria-label="{% trans 'Instagram' %}">
+                    <img src="{% static 'images/icons8-instagram-logo-50.png' %}" alt="{% trans 'Instagram' %}" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="small-text">
+        <small>&copy; 2025 Extraction Solutions. {% trans "Todos los derechos reservados." %}</small>
+    </div>
+</footer>

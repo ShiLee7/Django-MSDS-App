@@ -1,0 +1,12 @@
+<!-- This is my msds_section1.html-->
+
+{% extends "msds_base_form.html" %}
+{% load i18n %}
+
+{% block body %}
+<div class="section-header">
+    <h3>{% trans "Sección 1: Identificación" %}</h3>
+    <p class="section-info">{% trans "Por favor, proporcione los detalles de identificación del producto a continuación." %}</p>
+    {{ block.super }}
+</div>
+{% endblock %}

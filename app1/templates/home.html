@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block body %}
+
+<section class="hero-background back-images">
+    <div class="hero-section d-flex align-items-center">
+        <div class="container text-center">
+            <div class="hero-space"></div>
+            <h1 class="display-4 roboto-medium white-text">{% trans "Soluciones Profesionales en Ingeniería Química" %}</h1>
+            <p class="lead roboto-medium white-text">{% trans "Innovación y Excelencia al Servicio de tu Negocio" %}</p>
+        </div>
+    </div>
+
+    <section class="services-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 white-text">{% trans "Nuestros Servicios" %}</h2>
+            <div class="row">
+                <!-- Ingeniería Química Card -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-flask fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Ingeniería Química" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Ofrecemos soluciones innovadoras en procesos químicos para optimizar tu producción." %}
+                            </p>
+                            <a href="{% url 'iq' %}" class="btn btn-outline-light mt-3 white-text">{% trans "Más" %}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Servicios Educativos Card -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-chalkboard-teacher fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Servicios Educativos" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Capacitaciones y talleres especializados para el desarrollo profesional de tu equipo." %}
+                            </p>
+                            <a href="{% url 'edu' %}" class="btn btn-outline-light mt-3 white-text">{% trans "Más" %}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fintech Card -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-chart-line fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Fintech" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Integración de tecnología financiera para aumentar el rendimiento de tu dinero." %}
+                            </p>
+                            <a href="{% url 'fintech' %}" class="btn btn-outline-light mt-3 white-text">{% trans "Más" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<div class="divider">
+</div>
+    
+{% endblock %}

@@ -1,0 +1,13 @@
+<!-- This is my msds_section8.html-->
+
+{% extends "msds_base_form.html" %}
+{% load i18n %}
+
+{% block body %}
+<div class="section-header">
+    <h3>{% trans "Sección 8: Controles de Exposición/Protección Personal" %}</h3>
+    <p class="section-info">{% trans "Por favor, proporcione los detalles de controles de exposición/protección personal a continuación." %}</p>
+
+    {{ block.super }}
+</div>
+{% endblock %}

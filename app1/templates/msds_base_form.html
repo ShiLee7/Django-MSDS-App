@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block body %}
+<div class="section-container text-center">
+    <form method="post">
+        {% csrf_token %}
+        {{ wizard.management_form }}
+        {% include "_form_snippet.html" %}
+        
+        <!-- Pagination Buttons -->
+        <div class="pagination-container">
+            {% for step in wizard.steps.all %}
+                <button type="submit" name="wizard_goto_step" value="{{ step }}" 
+                        class="btn pagination-btn {% if step == wizard.steps.current %}active{% endif %}">
+                    {{ forloop.counter }} <!-- Display step number -->
+                </button>
+            {% endfor %}
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="form-navigation">
+            {% if wizard.steps.prev %}
+                <button type="submit" name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="btn btn-custom">
+                    {% trans "Anterior" %}
+                </button>
+            {% endif %}
+            <button type="submit" class="btn btn-custom">
+                {% if wizard.steps.next %}
+                    {% trans "Siguiente" %}
+                {% else %}
+                    {% trans "Enviar" %}
+                {% endif %}
+            </button>
+        </div>        
+    </form>
+</div>
+{% endblock %}

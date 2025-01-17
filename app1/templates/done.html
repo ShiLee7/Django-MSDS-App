@@ -1,0 +1,12 @@
+<!-- templates/msds_done.html -->
+{% extends 'layout.html' %}
+{% load i18n %}
+
+{% block body %}
+  <div class="container">
+    <h1>{% trans "HDS creación exitosa" %}</h1>
+    <p>{% trans "Su hoja de datos de seguridad ha sido creada con éxito." %}</p>
+    <!-- Optionally display some details or a summary -->
+    <a href="{% url 'home' %}" class="btn btn-primary">{% trans "Regresar a Inicio" %}</a>
+  </div>
+{% endblock %}

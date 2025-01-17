@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block body %}
+
+<section class="edu-background back-images">
+    <section class="services-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 white-text">{% trans "Servicios Educativos" %}</h2>
+            <div class="row justify-content-center">
+                <!-- Cuadro de Constantes de Sustancias -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-table fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Cuadro de Constantes de Sustancias" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Creación de cuadros de constantes físicas y químicas para estudiantes de laboratorio, ayudando a comprender mejor las propiedades fundamentales de las sustancias." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Capacitaciones en Seguridad Industrial -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-hard-hat fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Capacitaciones en Seguridad Industrial" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Programas especializados para garantizar la seguridad en entornos industriales, minimizando riesgos laborales y mejorando el cumplimiento normativo." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Capacitación a Operarios de Plantas de Tratamiento -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-water fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Capacitación a Operarios de Plantas de Tratamiento" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Formación para operarios de plantas de tratamiento de aguas, enfocada en el manejo eficiente y seguro de sistemas de potabilización y aguas residuales." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <!-- Capacitaciones en Almacenamiento Correcto de Químicos -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-warehouse fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Capacitaciones en Almacenamiento de Químicos" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Cursos sobre almacenamiento adecuado de productos químicos y etiquetado conforme a las normas locales, garantizando seguridad y cumplimiento legal." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+{% endblock body %}
