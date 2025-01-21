@@ -30,8 +30,7 @@ SECRET_KEY = 'django-insecure-gu_fy@@02=cc%$gftfj$9vk+c$@o5a30&f2a@udh+sjw2lne+d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['extracsol.com', 'www.extracsol.com', 'ShiLee.pythonanywhere.com'] 
-
+ALLOWED_HOSTS = ['*'] 
 
 # Application definition
 
