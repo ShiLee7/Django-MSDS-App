@@ -60,3 +60,5 @@ coverage.xml
 
 # Cloned repositories
 /pubchem-api-crawler/
+
+/locale/
