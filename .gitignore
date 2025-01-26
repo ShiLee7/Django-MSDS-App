@@ -30,7 +30,6 @@ staticfiles/
 static/
 
 # Django-specific files
-db.sqlite3
 *.pot
 *.py[cod]
 *.so

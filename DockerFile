@@ -31,8 +31,6 @@ RUN pip install --upgrade pip
 
 COPY pubchem-api-crawler /app/pubchem-api-crawler
 
-COPY .env /app/.env
-
 # Copy the Django project  and install dependencies
 COPY requirements.txt  /app/
 
