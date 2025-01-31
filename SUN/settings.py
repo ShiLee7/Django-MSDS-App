@@ -28,6 +28,8 @@ LOCALE_PATHS = [
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='').split(',')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
@@ -133,7 +135,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 print(STATIC_URL)
-STATIC_ROOT = BASE_DIR / 'static'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'app1', 'static')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 print(STATIC_ROOT)
 
 # Default primary key field type
@@ -192,8 +195,8 @@ LOGGING = {
 }
 
 
-#SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 
-#SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
-#CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True

@@ -1,5 +1,5 @@
 # Use the official Python runtime image
-FROM python:3.13
+FROM python:3.13-alpine
 
 # Create the app directory
 RUN mkdir /app
@@ -16,15 +16,15 @@ ENV PYTHONUNBUFFERED=1
 ENV DJANGO_SETTINGS_MODULE=SUN.settings
 
 # Install libcairo and its dependencies
-RUN apt-get update && apt-get install -y \
-    libcairo2 \
-    libpango-1.0-0 \
-    libpangocairo-1.0-0 \
-    libgdk-pixbuf2.0-0 \
-    libffi-dev \
-    libjpeg62-turbo-dev \
-    zlib1g-dev \
-    && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y \
+#     libcairo2 \
+#     libpango-1.0-0 \
+#     libpangocairo-1.0-0 \
+#     libgdk-pixbuf2.0-0 \
+#     libffi-dev \
+#     libjpeg62-turbo-dev \
+#     zlib1g-dev \
+#     && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip
 RUN pip install --upgrade pip 
@@ -44,4 +44,4 @@ COPY . /app/
 EXPOSE 8000
 
 # Start the application using Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "1", "SUN.wsgi:application"]
+CMD ["gunicorn", "--bind", ":8000", "--workers", "1", "SUN.wsgi:application"]

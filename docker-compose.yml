@@ -5,6 +5,6 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/app  # This will mount your app directory to the container
-      - ./db.sqlite3:/app/db.sqlite3  # This ensures the SQLite DB is persisted
+      - .:/app # This mounts your app directory to the container
+      - ./db.sqlite3:/app/db.sqlite3 # Persist SQLite DB
     env_file: .env

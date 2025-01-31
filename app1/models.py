@@ -52,7 +52,7 @@ class MSDS(models.Model):
     concentration = models.TextField(blank=True, null=True, verbose_name=_("Concentración"))
     other_unique_identifiers = models.CharField(max_length=50, blank=True, null=True, verbose_name=_("Otros Identificadores Únicos"))
 
-        # Section 4: First-Aid Measures
+    # Section 4: First-Aid Measures
     aid_inhal = models.TextField(
         blank=True, null=True, default='', 
         verbose_name=_("Medidas Necesarias para Inhalación")

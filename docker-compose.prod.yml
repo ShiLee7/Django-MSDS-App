@@ -1,9 +1,9 @@
 services:
   web:
     image: my-django-app
-    command: gunicorn my-django-app.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn SUN.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - static_volume:/app/staticfiles # Fixed volume reference
+      - ./staticfiles:/staticfiles # Map the root-level staticfiles folder
     build:
       dockerfile: Dockerfile.prod
     expose:
@@ -13,11 +13,10 @@ services:
   nginx:
     build: ./nginx
     volumes:
-      - static_volume:/app/staticfiles # Fixed volume reference
+      - ./staticfiles:/staticfiles # Map the root-level staticfiles folder
     ports:
       - 1337:80
     depends_on:
       - web
 
-volumes:
-  static_volume: # Declare the named volume here
+volumes: {}
