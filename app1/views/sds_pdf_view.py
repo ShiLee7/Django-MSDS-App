@@ -18,7 +18,6 @@ import datetime
 import json
 import logging
 import requests
-import cairosvg
 
 def generate_msds_pdf(request, msds_id):
     msds = get_object_or_404(MSDS, id=msds_id)

@@ -33,6 +33,12 @@ CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='').split(',')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
+SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', cast=bool)
+
+SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', cast=bool)
+
+CSRF_COOKIE_SECURE = config('CSRF_COOKIE_SECURE', cast=bool)
+
 ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='localhost', cast=Csv())
 print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
 
@@ -193,10 +199,3 @@ LOGGING = {
         },
     },
 }
-
-
-SECURE_SSL_REDIRECT = True
-
-SESSION_COOKIE_SECURE = True
-
-CSRF_COOKIE_SECURE = True

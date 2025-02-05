@@ -1,22 +1,21 @@
 services:
   web:
-    image: my-django-app
-    command: gunicorn SUN.wsgi:application --bind 0.0.0.0:8000
+    image: sds-app
     volumes:
-      - ./staticfiles:/staticfiles # Map the root-level staticfiles folder
-    build:
-      dockerfile: Dockerfile.prod
-    expose:
-      - 8000
+      - ./static:/app/staticfiles
+      - ./db:/app/db # Map the root-level staticfiles folder
+    build: .
     env_file: .env.prod
 
   nginx:
+    image:
     build: ./nginx
     volumes:
-      - ./staticfiles:/staticfiles # Map the root-level staticfiles folder
+      - ./staticfiles:/staticfiles
     ports:
       - 1337:80
     depends_on:
       - web
 
-volumes: {}
+volumes:
+  db:

@@ -19,7 +19,6 @@ import datetime
 import json
 import logging
 import requests
-import cairosvg
 
 logger = logging.getLogger(__name__)
 

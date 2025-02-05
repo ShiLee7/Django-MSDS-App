@@ -7,7 +7,6 @@ from .constants import *
 import logging
 
 from PIL import Image, ImageOps
-import cairosvg
 from io import BytesIO
 from reportlab.lib.units import inch
 from reportlab.lib.units import inch

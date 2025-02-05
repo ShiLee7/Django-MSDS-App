@@ -6,6 +6,7 @@ db.sqlite3
 .git/
 .vscode/
 .env
+.env*
 node_modules/
 staticfiles/
 media/
