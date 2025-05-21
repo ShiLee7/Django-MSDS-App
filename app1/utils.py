@@ -825,6 +825,21 @@ def get_degra(cid):
     except Exception as e:
         logger.error(f"An unexpected error occurred for CID {cid}: {e}")
         return ''
+    
+def get_mol_for(cid):
+    try:
+        annotations = Annotations().get_compound_annotations(cid, heading='Molecular Formula')
+        if not annotations.empty and annotations.shape[1] > 0:
+            mol_for = annotations.iloc[0, 0]
+            return mol_for
+        else:
+            return ''
+    except AttributeError as e:
+        logger.error(f"Error fetching 'Molecular Formula' data for CID {cid}: {e}")
+        return ''
+    except Exception as e:
+        logger.error(f"An unexpected error occurred for CID {cid}: {e}")
+        return ''
 
 class RotatedImage(Flowable):
     def __init__(self, path, angle=45, scale=0.75):

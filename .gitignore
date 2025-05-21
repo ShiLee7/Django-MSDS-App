@@ -31,8 +31,8 @@ static/
 *.so
 
 # Environment variables
-#.env
-#.env.prod
+.env
+.env.prod
 
 # Node modules (if using frontend tools like npm or yarn)
 node_modules/
@@ -55,8 +55,10 @@ coverage.xml
 *.pytest_cache/
 
 # Cloned repositories
-#/pubchem-api-crawler/
+/pubchem-api-crawler/
 
-#/locale/
+/locale/
 
 log1.txt
+
+downloaded_pdfs/

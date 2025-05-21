@@ -123,7 +123,7 @@
                 {% if wizard.steps.prev %}
                     <button type="submit" name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="btn btn-custom">{% trans "Anterior" %}</button>
                 {% endif %}
-                <button type="submit" class="btn btn-custom">{% if wizard.steps.next %}{% trans "Siguiente" %}{% else %}{% trans "Enviar" %}{% endif %}</button>
+                <button id="wizard_next" type="submit" class="btn btn-custom">{% if wizard.steps.next %}{% trans "Siguiente" %}{% else %}{% trans "Enviar" %}{% endif %}</button>
             </div>
 
         </form>

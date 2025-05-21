@@ -9,9 +9,6 @@ def iq(request):
 def edu(request):
     return render(request, 'edu.html')
 
-def fintech(request):
-    return render(request, 'fintech.html')
-
 def about(request):
     return render(request, 'about.html')
 

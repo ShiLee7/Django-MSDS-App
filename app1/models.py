@@ -388,3 +388,73 @@ class MSDS(models.Model):
         verbose_name=_("Otra Información")
     )
 
+class ChemTable(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    # You can add more metadata fields if needed
+
+    def __str__(self):
+        return self.name
+
+class Chemical(models.Model):
+    chemtable = models.ForeignKey(
+        'ChemTable',
+        related_name="chemicals",
+        on_delete=models.CASCADE,
+        verbose_name=_("Cuadro de constantes")
+    )
+    cas_number = models.CharField(
+        max_length=50,
+        verbose_name=_("Número CAS"),
+        blank=True,
+        null=True
+    )
+    chemical_name = models.CharField(
+        max_length=200,
+        verbose_name=_("Nombre de la sustancia"),
+        blank=True,
+        null=True
+    )
+    molecular_formula = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name=_("Fórmula molecular")
+    )
+    boiling_point = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name=_("Punto de ebullición")
+    )
+    density = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name=_("Densidad y/o densidad relativa")
+    )
+    t_change = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name=_("Punto de fusión/congelación")
+    )
+    phys = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name=_("Estado físico/apariencia")
+    )
+    solubility = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name=_("Solubilidad")
+    )
+    acute_toxicity_estimates = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name=_("Toxicidad aguda (estimada)")
+    )
+    # Puedes agregar más campos aquí si lo deseas
+
+    def __str__(self):
+        return f"{self.chemical_name} ({self.cas_number})"

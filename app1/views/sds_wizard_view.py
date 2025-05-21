@@ -85,7 +85,7 @@ class MSDSWizard(SessionWizardView):
                         if p_codes:
                             for category, codes_dict in p_codes.items():
                                 statements = [f"{code}: {desc}" for code, desc in codes_dict.items()]
-                                cached_data[f'{category}_precautionary_statements'] = '; '.join(statements)
+                                cached_data[f'{category}_statements'] = '; '.join(statements)
 
                         svg_data = fetch_and_find_svg_urls(cid)
                         if svg_data:

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ExtracSol 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 13:10-0600\n"
+"POT-Creation-Date: 2025-05-21 12:13-0600\n"
 "PO-Revision-Date: 2025-01-15 16:30-0600\n"
 "Last-Translator: Leonardo Jiménez <info@extracsol.com>\n"
 "Language-Team: English <en@extracsol.com>\n"
@@ -17,106 +17,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\app1\forms.py:24
+#: .\app1\forms.py:25
 msgid "Por favor, ingrese el nombre del fabricante."
 msgstr "Please enter the manufacturer name."
 
-#: .\app1\forms.py:25
+#: .\app1\forms.py:26
 msgid "El nombre del fabricante no puede exceder los 200 caracteres."
 msgstr "Manufacturer name cannot exceed 200 characters."
 
-#: .\app1\forms.py:28
+#: .\app1\forms.py:29
 #, fuzzy
 #| msgid "Dirección del Fabricante"
 msgid "Por favor, ingrese la dirección del fabricante."
 msgstr "Manufacturer Address"
 
-#: .\app1\forms.py:31
+#: .\app1\forms.py:32
 msgid "Por favor, ingrese el número de teléfono."
 msgstr "Please enter the phone number."
 
-#: .\app1\forms.py:32
+#: .\app1\forms.py:33
 msgid "El número de teléfono no puede exceder los 50 caracteres."
 msgstr "Phone number cannot exceed 50 characters."
 
-#: .\app1\forms.py:35
+#: .\app1\forms.py:36
 msgid "El número de teléfono de emergencia no puede exceder los 50 caracteres."
 msgstr "Emergency phone number cannot exceed 50 characters."
 
-#: .\app1\forms.py:38
+#: .\app1\forms.py:39
 msgid "Por favor, ingrese el uso recomendado."
 msgstr "Please enter the recommended use."
 
-#: .\app1\forms.py:39
+#: .\app1\forms.py:40
 msgid "El uso recomendado no puede exceder los 200 caracteres."
 msgstr "Recommended use cannot exceed 200 characters."
 
-#: .\app1\forms.py:42
+#: .\app1\forms.py:43
 msgid "Las restricciones de uso no pueden exceder los 200 caracteres."
 msgstr "Restrictions on use cannot exceed 200 characters."
 
-#: .\app1\forms.py:49
+#: .\app1\forms.py:50
 msgid "Nombre del producto"
 msgstr "Product Name"
 
-#: .\app1\forms.py:50
+#: .\app1\forms.py:51
 msgid "Nombre del fabricante"
 msgstr "Manufacturer Name"
 
-#: .\app1\forms.py:52
+#: .\app1\forms.py:53
 msgid "Dirección del fabricante"
 msgstr "Manufacturer Address"
 
-#: .\app1\forms.py:53 .\app1\forms.py:54
+#: .\app1\forms.py:54 .\app1\forms.py:55
 msgid "+1-555-555-5555"
 msgstr "+1-555-555-5555"
 
-#: .\app1\forms.py:55
+#: .\app1\forms.py:56
 msgid "Uso previsto del producto"
 msgstr "Intended use of the product"
 
-#: .\app1\forms.py:56
+#: .\app1\forms.py:57
 msgid "Restricciones de uso"
 msgstr "Restrictions on Use"
 
-#: .\app1\forms.py:110
+#: .\app1\forms.py:111
 #, fuzzy
 #| msgid "Agregar Pictogramas Adicionales"
 msgid "Agregar pictogramas adicionales"
 msgstr "Add Additional Pictograms"
 
-#: .\app1\forms.py:129
+#: .\app1\forms.py:130
 msgid "Por favor, ingrese la clasificación."
 msgstr "Please, enter the Classification"
 
-#: .\app1\forms.py:132
+#: .\app1\forms.py:133
 msgid "Por favor, ingrese los elementos de etiqueta."
 msgstr "Please, enter the GHS label elements"
 
-#: .\app1\forms.py:137
+#: .\app1\forms.py:138
 msgid "Peligros no clasificados de otra manera (HNOC)"
 msgstr "Hazards Not Otherwise Classified (HNOC)"
 
-#: .\app1\forms.py:138
+#: .\app1\forms.py:139
 msgid "Clasificación del producto"
 msgstr "Classification"
 
-#: .\app1\forms.py:153
+#: .\app1\forms.py:154
 msgid "Por favor, seleccione si es una sustancia o mezcla."
 msgstr "Please, select either Substance or Mixture"
 
-#: .\app1\forms.py:157
+#: .\app1\forms.py:158
 #, fuzzy
 #| msgid "Nombre Químico"
 msgid "Nombre químico"
 msgstr "Chemical Name"
 
-#: .\app1\forms.py:158 .\app1\models.py:51
+#: .\app1\forms.py:159 .\app1\models.py:51
 #: .\app1\templates\msds_section3.html:29
 msgid "Sinónimos"
 msgstr "Synonyms"
 
-#: .\app1\forms.py:159 .\app1\models.py:52
+#: .\app1\forms.py:160 .\app1\models.py:52
 #: .\app1\templates\msds_section3.html:66
 msgid "Concentración"
 msgstr "Concentration"
@@ -137,7 +137,8 @@ msgstr "Index Number"
 msgid "Número de Registro (REACH)"
 msgstr "Registration Number (REACH)"
 
-#: .\app1\models.py:10 .\app1\templates\msds_section3.html:47
+#: .\app1\models.py:10 .\app1\models.py:407
+#: .\app1\templates\msds_section3.html:47
 msgid "Número CAS"
 msgstr "CAS Number"
 
@@ -369,7 +370,7 @@ msgstr "Density and/or Relative Density"
 msgid "Densidad Relativa del Vapor"
 msgstr "Relative Vapor Density"
 
-#: .\app1\models.py:205
+#: .\app1\models.py:205 .\app1\models.py:450
 msgid "Solubilidad"
 msgstr "Solubility"
 
@@ -576,6 +577,40 @@ msgstr "Disclaimer"
 msgid "Otra Información"
 msgstr "Other Information"
 
+#: .\app1\models.py:403
+#, fuzzy
+#| msgid "Crear Cuadro de constantes"
+msgid "Cuadro de constantes"
+msgstr "Create Table of Constants"
+
+#: .\app1\models.py:413
+msgid "Nombre de la sustancia"
+msgstr "Substance Name"
+
+#: .\app1\models.py:421
+msgid "Fórmula molecular"
+msgstr "Molecular Formula"
+
+#: .\app1\models.py:427
+msgid "Punto de ebullición"
+msgstr "Boiling Point"
+
+#: .\app1\models.py:433
+msgid "Densidad y/o densidad relativa"
+msgstr "Density and/or Relative Density"
+
+#: .\app1\models.py:439
+msgid "Punto de fusión/congelación"
+msgstr "Melting Point/Freezing Point"
+
+#: .\app1\models.py:444
+msgid "Estado físico/apariencia"
+msgstr "Physical State/Appearance"
+
+#: .\app1\models.py:455
+msgid "Toxicidad aguda (estimada)"
+msgstr "Toxicity"
+
 #: .\app1\templates\_contact.html:6
 msgid "Contáctanos"
 msgstr "Contact Us"
@@ -633,7 +668,7 @@ msgstr "Instagram"
 msgid "Todos los derechos reservados."
 msgstr "All rights reserved."
 
-#: .\app1\templates\about.html:5 .\app1\templates\layout.html:44
+#: .\app1\templates\about.html:5 .\app1\templates\layout.html:42
 msgid "Acerca de"
 msgstr "About"
 
@@ -646,12 +681,21 @@ msgid "Ing. Leonardo Jiménez"
 msgstr "Eng. Leonardo Jiménez"
 
 #: .\app1\templates\about.html:22
+#, fuzzy
+#| msgid ""
+#| "En ExtracSol, nos dedicamos a ofrecer soluciones innovadoras y efectivas "
+#| "en ingeniería química, sistemas de GLP, tratamiento de agua potable y "
+#| "residual, y optimización de procesos químicos. Fundada en 2024 por el "
+#| "Ing. Leonardo Jiménez, nuestra empresa combina experiencia técnica con un "
+#| "enfoque personalizado para satisfacer las necesidades únicas de cada "
+#| "cliente."
 msgid ""
-"En ExtracSol, nos dedicamos a ofrecer soluciones innovadoras y efectivas en "
-"ingeniería química, sistemas de GLP, tratamiento de agua potable y residual, "
-"y optimización de procesos químicos. Fundada en 2024 por el Ing. Leonardo "
-"Jiménez, nuestra empresa combina experiencia técnica con un enfoque "
-"personalizado para satisfacer las necesidades únicas de cada cliente."
+"En ExtracSol nos especializamos en ofrecer soluciones innovadoras y "
+"efectivas en ingeniería química, sistemas de GLP, tratamiento de agua "
+"potable y residual, y optimización de procesos químicos. Fundada en 2024 por "
+"el Ing. Leonardo Jiménez, nuestra empresa combina una sólida experiencia "
+"técnica con un enfoque personalizado para atender las necesidades "
+"específicas de cada cliente."
 msgstr ""
 "At ExtracSol, we are dedicated to providing innovative and effective "
 "solutions in chemical engineering, LPG systems, potable and wastewater "
@@ -660,11 +704,17 @@ msgstr ""
 "personalized approach to meet the unique needs of each client."
 
 #: .\app1\templates\about.html:25
+#, fuzzy
+#| msgid ""
+#| "El Ing. Leonardo Jiménez ha trabajado como consultor y profesional "
+#| "independiente desde 2021. Además, desde 2023 ha impartido clases en "
+#| "universidades privadas, compartiendo su conocimiento y pasión por la "
+#| "ingeniería química con las futuras generaciones."
 msgid ""
-"El Ing. Leonardo Jiménez ha trabajado como consultor y profesional "
-"independiente desde 2021. Además, desde 2023 ha impartido clases en "
-"universidades privadas, compartiendo su conocimiento y pasión por la "
-"ingeniería química con las futuras generaciones."
+"El Ing. Leonardo Jiménez ha ejercido como consultor y profesional "
+"independiente desde 2021, y desde 2023 ha impartido clases en diversas "
+"universidades, transmitiendo su profundo conocimiento y pasión por la "
+"ingeniería química a las futuras generaciones."
 msgstr ""
 "Eng. Leonardo Jiménez has worked as a consultant and independent "
 "professional since 2021. Additionally, since 2023, he has been teaching at "
@@ -672,11 +722,17 @@ msgstr ""
 "engineering with future generations."
 
 #: .\app1\templates\about.html:28
+#, fuzzy
+#| msgid ""
+#| "En ExtracSol, también entendemos la importancia de la diversificación y "
+#| "la innovación financiera. Por ello, contamos con personal con experiencia "
+#| "en inversión en criptoactivos y acciones estadounidenses desde 2017, lo "
+#| "que nos permite ofrecer servicios adicionales en el ámbito de la fintech."
 msgid ""
-"En ExtracSol, también entendemos la importancia de la diversificación y la "
-"innovación financiera. Por ello, contamos con personal con experiencia en "
-"inversión en criptoactivos y acciones estadounidenses desde 2017, lo que nos "
-"permite ofrecer servicios adicionales en el ámbito de la fintech."
+"En ExtracSol entendemos la importancia de la diversificación y la innovación "
+"financiera. Por ello, contamos con un equipo con amplia experiencia en "
+"inversiones en criptoactivos y acciones estadounidenses desde 2017, lo que "
+"nos permite ofrecer servicios complementarios en el ámbito fintech."
 msgstr ""
 "At ExtracSol, we also understand the importance of diversification and "
 "financial innovation. Therefore, we have personnel with experience in "
@@ -684,32 +740,78 @@ msgstr ""
 "offer additional services in the fintech sector."
 
 #: .\app1\templates\about.html:31
+#, fuzzy
+#| msgid ""
+#| "Nuestro compromiso es proporcionar soluciones integrales que no solo "
+#| "cumplan con los estándares de calidad, sino que también superen las "
+#| "expectativas de nuestros clientes. Ya sea en el diseño y la certificación "
+#| "de instalaciones, el tratamiento de aguas, o la capacitación profesional, "
+#| "en ExtracSol trabajamos para marcar la diferencia."
 msgid ""
-"Nuestro compromiso es proporcionar soluciones integrales que no solo cumplan "
-"con los estándares de calidad, sino que también superen las expectativas de "
-"nuestros clientes. Ya sea en el diseño y la certificación de instalaciones, "
-"el tratamiento de aguas, o la capacitación profesional, en ExtracSol "
-"trabajamos para marcar la diferencia."
+"Nuestro compromiso es brindar soluciones integrales que no solo cumplan con "
+"los más altos estándares de calidad, sino que superen las expectativas de "
+"nuestros clientes. Ya sea en el diseño y certificación de instalaciones, el "
+"tratamiento de aguas o la capacitación profesional, en ExtracSol trabajamos "
+"con determinación para marcar la diferencia."
 msgstr ""
 "Our commitment is to provide comprehensive solutions that not only meet "
 "quality standards but also exceed our clients' expectations. Whether in the "
 "design and certification of installations, water treatment, or professional "
 "training, at ExtracSol we strive to make a difference."
 
+#: .\app1\templates\chemtable.html:5
+msgid "Crear Cuadro de constantes"
+msgstr "Create Table of Constants"
+
+#: .\app1\templates\chemtable.html:15
+msgid "Sustancias químicas"
+msgstr "Chemical"
+
+#: .\app1\templates\chemtable.html:39 .\app1\templates\chemtable.html:61
+#: .\app1\templates\chemtable.html:89
+msgid "X"
+msgstr "X"
+
+#: .\app1\templates\chemtable.html:51 .\app1\templates\chemtable.html:79
+msgid "Buscar datos"
+msgstr "Look for data"
+
+#: .\app1\templates\chemtable.html:69
+msgid "Agregar sustancia"
+msgstr "Add Substance"
+
+#: .\app1\templates\chemtable.html:70
+msgid "Guardar Cuadro de Sustancias"
+msgstr "Save Table of Constants"
+
+#: .\app1\templates\chemtable_success.html:6
+msgid "Cuadro de Constantes creado exitosamente"
+msgstr "Table of Constants Successfully Created"
+
+#: .\app1\templates\chemtable_success.html:9 .\app1\templates\done.html:11
+msgid "Si la descarga no empieza, "
+msgstr "If download does not start,"
+
+#: .\app1\templates\chemtable_success.html:10 .\app1\templates\done.html:12
+msgid "Presiona aquí"
+msgstr "Click Here"
+
+#: .\app1\templates\chemtable_success.html:13 .\app1\templates\done.html:15
+msgid "Regresar a Inicio"
+msgstr "Back to Home"
+
 #: .\app1\templates\done.html:7
-msgid "HDS creación exitosa"
+#, fuzzy
+#| msgid "HDS creación exitosa"
+msgid "HDS creada exitosamente"
 msgstr "SDS Successfully Created"
 
 #: .\app1\templates\done.html:8
 msgid "Su hoja de datos de seguridad ha sido creada con éxito."
 msgstr "Your safety data sheet has been successfully created."
 
-#: .\app1\templates\done.html:10
-msgid "Regresar a Inicio"
-msgstr "Back to Home"
-
 #: .\app1\templates\edu.html:9 .\app1\templates\home.html:37
-#: .\app1\templates\layout.html:38
+#: .\app1\templates\layout.html:39
 msgid "Servicios Educativos"
 msgstr "Educational Services"
 
@@ -727,11 +829,15 @@ msgstr ""
 "students, helping them better understand the fundamental properties of "
 "substances."
 
-#: .\app1\templates\edu.html:28
+#: .\app1\templates\edu.html:20
+msgid "Crear nuevo cuadro"
+msgstr "Create New Table"
+
+#: .\app1\templates\edu.html:29
 msgid "Capacitaciones en Seguridad Industrial"
 msgstr "Industrial Safety Training"
 
-#: .\app1\templates\edu.html:30
+#: .\app1\templates\edu.html:31
 msgid ""
 "Programas especializados para garantizar la seguridad en entornos "
 "industriales, minimizando riesgos laborales y mejorando el cumplimiento "
@@ -740,11 +846,11 @@ msgstr ""
 "Specialized programs to ensure safety in industrial environments, minimize "
 "workplace risks, and improve regulatory compliance."
 
-#: .\app1\templates\edu.html:40
+#: .\app1\templates\edu.html:41
 msgid "Capacitación a Operarios de Plantas de Tratamiento"
 msgstr "Training for Treatment Plant Operators"
 
-#: .\app1\templates\edu.html:42
+#: .\app1\templates\edu.html:43
 msgid ""
 "Formación para operarios de plantas de tratamiento de aguas, enfocada en el "
 "manejo eficiente y seguro de sistemas de potabilización y aguas residuales."
@@ -752,71 +858,17 @@ msgstr ""
 "Training for water treatment plant operators, focused on the efficient and "
 "safe management of potable water and wastewater systems."
 
-#: .\app1\templates\edu.html:54
+#: .\app1\templates\edu.html:55
 msgid "Capacitaciones en Almacenamiento de Químicos"
 msgstr "Chemical Storage Training"
 
-#: .\app1\templates\edu.html:56
+#: .\app1\templates\edu.html:57
 msgid ""
 "Cursos sobre almacenamiento adecuado de productos químicos y etiquetado "
 "conforme a las normas locales, garantizando seguridad y cumplimiento legal."
 msgstr ""
 "Courses on proper chemical storage and labeling according to local "
 "standards, ensuring safety and legal compliance."
-
-#: .\app1\templates\fintech.html:9
-#, fuzzy
-#| msgid "Servicios de Fintech"
-msgid "Servicios de FinTech"
-msgstr "Fintech Services"
-
-#: .\app1\templates\fintech.html:16
-msgid "Bots Avanzados de Trading"
-msgstr "Advanced Trading Bots"
-
-#: .\app1\templates\fintech.html:18
-msgid ""
-"Bots que analizan mercados y ejecutan estrategias avanzadas, incluyendo "
-"comparación de retornos con Bitcoin y diversificación de portafolios."
-msgstr ""
-"Bots that analyze markets and execute advanced strategies, including return "
-"comparisons with Bitcoin and portfolio diversification."
-
-#: .\app1\templates\fintech.html:28
-msgid "Garantía de Retorno Anual"
-msgstr "Annual Return Guarantee"
-
-#: .\app1\templates\fintech.html:30
-msgid ""
-"Invierte con la promesa de obtener un retorno superior al S&P500 al "
-"finalizar el año. Seguridad y confianza en tus inversiones."
-msgstr ""
-"Invest with the promise of achieving a return higher than the S&P500 by the "
-"end of the year. Security and confidence in your investments."
-
-#: .\app1\templates\fintech.html:40
-msgid "Asesoría en Finanzas"
-msgstr "Financial Consulting"
-
-#: .\app1\templates\fintech.html:42
-msgid ""
-"Aprende a manejar tus finanzas personales con cursos prácticos sobre "
-"presupuesto, ahorro e inversión y tecnologías actuales."
-msgstr ""
-"Learn to manage your personal finances with practical courses on budgeting, "
-"saving, investing, and current technologies."
-
-#: .\app1\templates\fintech.html:54
-msgid "Staking de Criptomonedas"
-msgstr "Cryptocurrency Staking"
-
-#: .\app1\templates\fintech.html:56
-msgid ""
-"Participa en pools de staking para generar ingresos pasivos con "
-"criptomonedas de alto rendimiento."
-msgstr ""
-"Join staking pools to generate passive income with high-yield "
-"cryptocurrencies."
 
 #: .\app1\templates\home.html:10
 msgid "Soluciones Profesionales en Ingeniería Química"
@@ -843,7 +895,6 @@ msgstr ""
 "production."
 
 #: .\app1\templates\home.html:28 .\app1\templates\home.html:41
-#: .\app1\templates\home.html:54
 msgid "Más"
 msgstr "More"
 
@@ -854,17 +905,6 @@ msgid ""
 msgstr ""
 "Training and specialized workshops for the professional development of your "
 "team."
-
-#: .\app1\templates\home.html:50
-msgid "Fintech"
-msgstr "Fintech"
-
-#: .\app1\templates\home.html:52
-msgid ""
-"Integración de tecnología financiera para aumentar el rendimiento de tu "
-"dinero."
-msgstr ""
-"Integration of financial technology to increase the return on your money."
 
 #: .\app1\templates\iq.html:9
 msgid "Servicios de Ingeniería Química"
@@ -933,7 +973,7 @@ msgstr ""
 
 #: .\app1\templates\iq.html:78
 msgid "Regencias Químicas"
-msgstr "Chemical Stewardship"
+msgstr "Chemical Regulatory Services"
 
 #: .\app1\templates\iq.html:80
 msgid ""
@@ -942,31 +982,27 @@ msgstr ""
 "Chemical management services ensuring legal compliance and process "
 "optimization."
 
-#: .\app1\templates\layout.html:29
+#: .\app1\templates\layout.html:30
 msgid "Logo"
 msgstr "Logo"
 
-#: .\app1\templates\layout.html:35
+#: .\app1\templates\layout.html:36
 msgid "Servicios de Ing. Química"
 msgstr "Chemical Engineering Services"
 
-#: .\app1\templates\layout.html:41
-msgid "Servicios de Fintech"
-msgstr "Fintech Services"
-
-#: .\app1\templates\layout.html:47
+#: .\app1\templates\layout.html:45
 msgid "Contacto"
 msgstr "Contact"
 
-#: .\app1\templates\layout.html:50
+#: .\app1\templates\layout.html:48
 msgid "Artículos"
 msgstr "Articles"
 
-#: .\app1\templates\layout.html:56
+#: .\app1\templates\layout.html:54
 msgid "Español"
 msgstr "Spanish"
 
-#: .\app1\templates\layout.html:57
+#: .\app1\templates\layout.html:55
 msgid "English"
 msgstr "English"
 
@@ -1248,11 +1284,62 @@ msgid ""
 "continuación."
 msgstr "Please provide the Physical and chemical properties details below."
 
-#~ msgid "Estado físico o apariencia"
-#~ msgstr "Physical State/Appearance"
+#, fuzzy
+#~| msgid "Servicios de Fintech"
+#~ msgid "Servicios de FinTech"
+#~ msgstr "Fintech Services"
 
-#~ msgid "Punto de fusión/punto de congelación"
-#~ msgstr "Melting Point/Freezing Point"
+#~ msgid "Bots Avanzados de Trading"
+#~ msgstr "Advanced Trading Bots"
+
+#~ msgid ""
+#~ "Bots que analizan mercados y ejecutan estrategias avanzadas, incluyendo "
+#~ "comparación de retornos con Bitcoin y diversificación de portafolios."
+#~ msgstr ""
+#~ "Bots that analyze markets and execute advanced strategies, including "
+#~ "return comparisons with Bitcoin and portfolio diversification."
+
+#~ msgid "Garantía de Retorno Anual"
+#~ msgstr "Annual Return Guarantee"
+
+#~ msgid ""
+#~ "Invierte con la promesa de obtener un retorno superior al S&P500 al "
+#~ "finalizar el año. Seguridad y confianza en tus inversiones."
+#~ msgstr ""
+#~ "Invest with the promise of achieving a return higher than the S&P500 by "
+#~ "the end of the year. Security and confidence in your investments."
+
+#~ msgid "Asesoría en Finanzas"
+#~ msgstr "Financial Consulting"
+
+#~ msgid ""
+#~ "Aprende a manejar tus finanzas personales con cursos prácticos sobre "
+#~ "presupuesto, ahorro e inversión y tecnologías actuales."
+#~ msgstr ""
+#~ "Learn to manage your personal finances with practical courses on "
+#~ "budgeting, saving, investing, and current technologies."
+
+#~ msgid "Staking de Criptomonedas"
+#~ msgstr "Cryptocurrency Staking"
+
+#~ msgid ""
+#~ "Participa en pools de staking para generar ingresos pasivos con "
+#~ "criptomonedas de alto rendimiento."
+#~ msgstr ""
+#~ "Join staking pools to generate passive income with high-yield "
+#~ "cryptocurrencies."
+
+#~ msgid "Fintech"
+#~ msgstr "Fintech"
+
+#~ msgid ""
+#~ "Integración de tecnología financiera para aumentar el rendimiento de tu "
+#~ "dinero."
+#~ msgstr ""
+#~ "Integration of financial technology to increase the return on your money."
+
+#~ msgid "Servicios de Fintech"
+#~ msgstr "Fintech Services"
 
 #, fuzzy
 #~| msgid "Punto de Ebullición"
@@ -1278,11 +1365,6 @@ msgstr "Please provide the Physical and chemical properties details below."
 #~| msgid "Presión de Vapor"
 #~ msgid "Presión de vapor"
 #~ msgstr "Vapor Pressure"
-
-#, fuzzy
-#~| msgid "Densidad y/o Densidad Relativa"
-#~ msgid "Densidad y/o densidad relativa"
-#~ msgstr "Density and/or Relative Density"
 
 #, fuzzy
 #~| msgid "Densidad Relativa del Vapor"

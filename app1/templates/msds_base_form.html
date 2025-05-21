@@ -21,7 +21,7 @@
         <!-- Navigation Buttons -->
         <div class="form-navigation">
             {% if wizard.steps.prev %}
-                <button type="submit" name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="btn btn-custom">
+                <button type="submit" name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="">
                     {% trans "Anterior" %}
                 </button>
             {% endif %}
@@ -34,5 +34,5 @@
             </button>
         </div>        
     </form>
-</div>
+</div>btn btn-custom
 {% endblock %}

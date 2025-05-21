@@ -2,6 +2,7 @@ from django import forms
 from django.utils.translation import gettext_lazy as _
 from .models import *
 from .constants import *
+from django.forms import modelformset_factory, inlineformset_factory
 
 class MSDSSection1Form(forms.ModelForm):
     class Meta:
@@ -372,3 +373,18 @@ class MSDSSection16Form(forms.ModelForm):
             'version': forms.TextInput(attrs={}),
             'other_information': forms.Textarea(attrs={'rows': 3})
         }
+
+class ChemTableForm(forms.ModelForm):
+    class Meta:
+        model = ChemTable
+        fields = '__all__'
+
+ChemicalFormSet = inlineformset_factory(
+    ChemTable, Chemical,
+    fields=[
+        'cas_number', 'chemical_name', 'molecular_formula', 'boiling_point',
+        'density', 't_change', 'phys', 'solubility', 'acute_toxicity_estimates'
+    ],
+    extra=1,  # Start with one chemical row by default
+    can_delete=True
+)

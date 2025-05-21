@@ -15,9 +15,6 @@ from io import BytesIO
 from django.http import HttpResponse
 
 import datetime
-import json
-import logging
-import requests
 
 def generate_msds_pdf(request, msds_id):
     msds = get_object_or_404(MSDS, id=msds_id)
@@ -199,34 +196,42 @@ def generate_msds_pdf(request, msds_id):
                 logger.debug(f"DESC_TO_IMAGE[desc]: {DESC_TO_IMAGE[desc]}")
                 logger.debug(f"type(DESC_TO_IMAGE[desc]): {type(DESC_TO_IMAGE[desc])}")
                 img_path = finders.find(DESC_TO_IMAGE[desc])
-                logger.debug(f"img_path:{img_path}")
+                logger.debug(f"img_path: {img_path}")
                 if img_path:
                     rotated_img = RotatedImage(img_path, angle=-45, scale=0.10)
                     images.append(rotated_img)
-        
+
         max_per_row = 3
         image_rows = [images[i:i + max_per_row] for i in range(0, len(images), max_per_row)]
-
-        for row_images in image_rows:
-            row_len = len(row_images)
-            
-            # Dynamically create a table for each row
-            row_table = Table(
-                data=[row_images],  # Single row table
-                colWidths=[1.5 * inch] * row_len  # Adjust column widths based on the number of images
+        
+        if image_rows:
+            # For the first row, keep the label and the table together.
+            first_row_table = Table(
+                data=[image_rows[0]],  # First row of images
+                colWidths=[1.5 * inch] * len(image_rows[0])
             )
-            
-            # Apply styling to the row table
-            row_table.setStyle(TableStyle([
+            first_row_table.setStyle(TableStyle([
                 ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
                 ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
                 ('TOPPADDING', (0, 0), (-1, -1), 16),
                 ('BOTTOMPADDING', (0, 0), (-1, -1), 16)
             ]))
+            # Keep the header, spacer and first row table together on the same page.
+            story.append(KeepTogether([label_sec2_head, spacer_inbet, first_row_table]))
             
-            # Wrap the row table in KeepTogether and add it to the story
-            story.append(KeepTogether([label_sec2_head, spacer_inbet, row_table]))
-
+            # For additional rows, add each row separately (without repeating the label).
+            for row_images in image_rows[1:]:
+                row_table = Table(
+                    data=[row_images],
+                    colWidths=[1.5 * inch] * len(row_images)
+                )
+                row_table.setStyle(TableStyle([
+                    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                    ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+                    ('TOPPADDING', (0, 0), (-1, -1), 16),
+                    ('BOTTOMPADDING', (0, 0), (-1, -1), 16)
+                ]))
+                story.append(KeepTogether([row_table]))
 
         # Add a fallback message if no images are provided
         if not images:
