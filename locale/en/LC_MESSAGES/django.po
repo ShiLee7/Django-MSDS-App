@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ExtracSol 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-21 12:13-0600\n"
+"POT-Creation-Date: 2025-05-21 16:12-0600\n"
 "PO-Revision-Date: 2025-01-15 16:30-0600\n"
 "Last-Translator: Leonardo Jiménez <info@extracsol.com>\n"
 "Language-Team: English <en@extracsol.com>\n"
@@ -947,17 +947,21 @@ msgstr ""
 "Solutions and consulting for wastewater treatment plants and potable water "
 "systems."
 
-#: .\app1\templates\iq.html:54
+#: .\app1\templates\iq.html:53
 msgid "Diseño de Etiquetas y Fichas de datos de seguridad"
 msgstr "Design of Labels and Safety Data Sheets"
 
-#: .\app1\templates\iq.html:56
+#: .\app1\templates\iq.html:55
 msgid ""
 "Elaboración de Etiquetas y Fichas de datos de seguridad online según "
 "normativa aplicable."
 msgstr ""
 "Preparation of labels and safety data sheets online according to applicable "
 "regulations."
+
+#: .\app1\templates\iq.html:57
+msgid "Crear FDS"
+msgstr "Create MSDS"
 
 #: .\app1\templates\iq.html:66
 msgid "Almacenamiento de Químicos"
@@ -1022,21 +1026,21 @@ msgstr "This page is still under development. Please check back later."
 msgid "Volver al Inicio"
 msgstr "Back to Home"
 
-#: .\app1\templates\msds_base_form.html:25
+#: .\app1\templates\msds_base_form.html:21
 #: .\app1\templates\msds_section14.html:138
 #: .\app1\templates\msds_section2.html:124
 #: .\app1\templates\msds_section3.html:99
 msgid "Anterior"
 msgstr "Previous"
 
-#: .\app1\templates\msds_base_form.html:30
+#: .\app1\templates\msds_base_form.html:25
 #: .\app1\templates\msds_section14.html:140
 #: .\app1\templates\msds_section2.html:126
 #: .\app1\templates\msds_section3.html:101
 msgid "Siguiente"
 msgstr "Next"
 
-#: .\app1\templates\msds_base_form.html:32
+#: .\app1\templates\msds_base_form.html:27
 #: .\app1\templates\msds_section14.html:140
 #: .\app1\templates\msds_section2.html:126
 #: .\app1\templates\msds_section3.html:101

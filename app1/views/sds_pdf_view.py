@@ -976,10 +976,10 @@ def generate_msds_pdf(request, msds_id):
         )
 
     # Version Paragraph
-    if msds.version.strip() != '':
+    if msds.version and msds.version.strip():
         version = Paragraph(
             f"""<para align="justify"><font size=10>
-            <b>Version:</b> {msds.version}
+            <b>Version:</b> {msds.version.strip()}
             </font></para>""",
             styles["Normal"]
         )
@@ -1006,7 +1006,7 @@ def generate_msds_pdf(request, msds_id):
     if msds.disclaimer.strip() != '':
         sec16.append(disclaimer)
 
-    if msds.version.strip() != '':
+    if msds.version and msds.version.strip() != '':
         sec16.append(version)
 
     if msds.date_of_preparation is not None:

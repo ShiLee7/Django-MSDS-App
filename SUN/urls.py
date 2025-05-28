@@ -35,5 +35,4 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),  # Admin URLs with language prefixes
     path("", include("app1.urls")),
-    
 )
