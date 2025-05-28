@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block body %}
+
+<section class="iq-background back-images">
+    <section class="services-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 white-text">{% trans "Servicios de Ingeniería Química" %}</h2>
+            <div class="row">
+                <!-- Consultoría en Procesos Industriales -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-certificate fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Consultoría en Procesos Industriales" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Soluciones para procesos industriales a partir de consultorías personalizadas con un enfoque en eficiencia, reducción de costos y disminución de huella de carbono." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Instalación y Diseño de Sistemas de Gas LP -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-tools fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Certificación, Instalación y Diseño de Sistemas de Gas LP" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Certificaciones, Diseño e instalación de sistemas de Gas LP adaptados a tus necesidades, garantizando cumplimiento legal, eficiencia y seguridad." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Asesoría en Tratamiento de Aguas -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-water fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Asesoría en Tratamiento de Aguas" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Soluciones y asesoría para plantas de tratamiento de aguas residuales y sistemas de potabilización." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-file-alt fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Diseño de Etiquetas y Fichas de datos de seguridad" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Elaboración de Etiquetas y Fichas de datos de seguridad online según normativa aplicable." %}
+                            </p>
+                            <a href="{% url 'msds_create' %}" class="btn btn-outline-light mt-3 white-text">{% trans 'Crear FDS' %}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Asesoría en Almacenamiento Seguro de Químicos -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-warehouse fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Almacenamiento de Químicos" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Asesoría en prácticas seguras de almacenamiento para químicos en bodegas y laboratorios." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Regencias Químicas -->
+                <div class="col-md-4">
+                    <div class="card bg-transparent border-0 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-user-tie fa-3x mb-3 white-text"></i>
+                            <h5 class="card-title white-text">{% trans "Regencias Químicas" %}</h5>
+                            <p class="card-text white-text">
+                                {% trans "Servicios de regencia química para cumplimiento legal y mejora de procesos." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+{% endblock body %}

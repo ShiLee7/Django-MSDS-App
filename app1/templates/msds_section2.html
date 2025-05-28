@@ -1,0 +1,141 @@
+{% extends "msds_base_form.html" %}
+{% load static i18n %}
+{% load app1_extras %}
+
+{% block body %}
+<div class="section-header">
+    <h3>{% trans "Sección 2: Identificación de Peligros" %}</h3>
+    <p class="section-info">{% trans "Por favor, proporcione los detalles de identificación de peligros del producto a continuación." %}</p>
+
+    <div class="section-container text-center">
+        <form method="post">
+            {% csrf_token %}
+            {{ wizard.management_form }}
+
+            <!-- Classification Field -->
+            <div class="form-group">
+                <label for="classification" class="form-label">{% trans "Clasificación" %}</label>
+                {{ wizard.form.classification.as_hidden }}
+                <div id="classification-fields" class="gap-2"></div>
+                <div class="mt-2">
+                    <button type="button" id="add-classification" class="btn btn-custom" title="{% trans 'Add Classification' %}">
+                        + 
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="hazard_statements" class="form-label">{% trans "Frases de Peligro y Pictogramas GHS" %}</label>
+                {{ wizard.form.hazard_statements.as_hidden }}
+                <div id="hazard-fields" class="gap-2"></div>
+                <div class="mt-2">
+                    <button type="button" id="add-hazard" class="btn btn-custom" title="{% trans 'Add Hazard' %}">
+                        +
+                    </button>
+                </div>
+            </div>
+
+            <script type="application/json" id="label-elements-data">
+                {{ label_elements_json|safe }}
+            </script>
+            <script type="application/json" id="pictograms-dict-data">
+                {{ pictograms_json|safe }}
+            </script>
+            <script type="application/json" id="initial-precautionary-statements">
+                {{ initial_precautionary_statements_json|safe }}
+            </script>
+
+            {{ wizard.form.label_elements.as_hidden }}
+
+            <div class="form-group" id="label-elements">
+                {% if wizard.form.initial.label_elements %}
+                        {% for element in wizard.form.initial.label_elements %}
+                            <div class="label-element">
+                                <img src="{{ element.url }}" alt="{{ element.description|default:'GHS Label' }}" class="ghs-pictogram">
+                                <p class="pictogram-description">{{ element.description }}</p>
+                            </div>
+                        {% endfor %}
+                {% else %}
+                    <p class="no-label-elements">{% trans "No label elements available." %}</p>
+                {% endif %}
+            </div>
+
+            <div class="form-group" id="p-elements">
+                {{ wizard.form.general_statements.as_hidden }}
+                {{ wizard.form.prevention_statements.as_hidden }}
+                {{ wizard.form.response_statements.as_hidden }}
+                {{ wizard.form.storage_statements.as_hidden }}
+                {{ wizard.form.disposal_statements.as_hidden }}
+            </div>
+
+            <!-- Additional Pictograms -->
+            <div class="form-group">
+                <label class="form-label">{% trans "Agregar Pictogramas Adicionales" %}</label>
+                <div id="additional-pictograms" class="pictogram-checkbox-container">
+                    {% for value, label in wizard.form.fields.additional_pictograms.choices %}
+                    <div class="checkbox label-element">
+                        <label>
+                            <img src="{{ pictograms_dict|get_item:value }}" alt="{{ label }}" class="ghs-pictogram">
+                            <p class="pictogram-description">{{ label }}</p>
+                            <input type="checkbox" name="section2-additional_pictograms" value="{{ value }}"
+                                {% if value in wizard.form.additional_pictograms.value %}checked{% endif %}>
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button type="button" id="update-pictograms" class="btn btn-custom">{% trans "Actualizar Pictogramas" %}</button>
+            </div>
+
+            <p class="section-header-about">{% trans 'Frases de Precaución' %}</p>
+            <!-- Precautionary Statements Sections -->
+            {% for category in categories %}
+                <div class="form-group">
+                    <div class="subtitle" style="font-size: 1.08rem; font-weight: 500; color: #666; margin-bottom: 6px;">
+                        {{ subcategory_labels|get_item:category }}
+                    </div>
+                    <div id="{{ category }}-statements-fields" class="form-input-field"></div>
+                    <div class="mt-2">
+                        <button type="button" id="add-{{ category }}-statement" class="btn btn-custom" title="{% trans 'Agregar' %} {{ subcategory_labels|get_item:category }} {% trans 'Frase' %}">
+                            +
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+
+            {% for field in wizard.form %}
+                {% if field.name not in 'classification,label_elements,additional_pictograms,hazard_statements,general_statements,prevention_statements,response_statements,storage_statements,disposal_statements' %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                    <div class="text-danger">{{ field.errors }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+
+            <div class="pagination-container">
+                {% for step in wizard.steps.all %}
+                    <button type="submit" name="wizard_goto_step" value="{{ step }}" 
+                            class="btn pagination-btn {% if step == wizard.steps.current %}active{% endif %}">
+                        {{ forloop.counter }} <!-- Display step number -->
+                    </button>
+                {% endfor %}
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+                {% if wizard.steps.prev %}
+                    <button type="submit" name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="btn btn-custom">{% trans "Anterior" %}</button>
+                {% endif %}
+                <button id="wizard_next" type="submit" class="btn btn-custom">{% if wizard.steps.next %}{% trans "Siguiente" %}{% else %}{% trans "Enviar" %}{% endif %}</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="{% static 'app1/classification.js' %}"></script>
+    <script src="{% static 'app1/h_codes.js' %}"></script>
+    <script src="{% static 'app1/picto.js' %}"></script>
+    <script src="{% static 'app1/precautionary_statements.js' %}"></script>
+{% endblock %}

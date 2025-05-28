@@ -1,0 +1,13 @@
+<!-- This is my msds_section9.html-->
+
+{% extends "msds_base_form.html" %}
+{% load i18n %}
+
+{% block body %}
+<div class="section-header">
+    <h3>{% trans "Sección 9: Propiedades físicas y químicas" %}</h3>
+    <p class="section-info">{% trans "Por favor, proporcione los detalles de las propiedades físicas y químicas a continuación." %}</p>
+
+    {{ block.super }}
+</div>
+{% endblock %}

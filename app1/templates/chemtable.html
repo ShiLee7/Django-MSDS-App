@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+{% load static i18n %}
+<script>
+    var MSG_ENTER_CAS = "{% trans 'Por favor, ingrese un Número CAS.' %}";
+    var MSG_ERROR_FETCH = "{% trans 'Error al obtener los datos. Intente nuevamente.' %}";
+</script>
+{% block body %}
+  <div class="section-header chemtable-form">
+    <h3>{% trans 'Crear Cuadro de constantes' %}</h3>
+    {% if form.errors %}
+      <div class="alert alert-danger">{{ form.errors }}</div>
+    {% endif %}
+    {% if chemical_formset.non_form_errors %}
+      <div class="alert alert-danger">{{ chemical_formset.non_form_errors }}</div>
+    {% endif %}
+
+    <form method="post" id="chemtable-form" action="{% url 'chemtable_create' %}">
+      {% csrf_token %}
+      <h4 class="mt-4 mb-2">{% trans 'Sustancias químicas' %}</h4>
+      {{ chemical_formset.management_form }}
+
+      <div class="table-responsive mb-2">
+        <table class="table table-bordered table-sm align-middle text-center" id="chemicals-table" style="min-width: 1000px;">
+          <colgroup>
+            <col style="width: 5%;">
+            <col style="width: 10%;">
+            <col style="width: 10%;">
+            <col style="width: 5%;">
+            <col style="width: 5%;">
+            <col style="width: 5%;">
+            <col style="width: 20%;">
+            <col style="width: 10%;">
+            <col style="width: 20%;">
+            <col style="width: 5%;">
+            <col style="width: 5%;">
+          </colgroup>
+          <thead class="table-warning">
+            <tr>
+              {% for field in chemical_formset.empty_form.visible_fields %}
+                <th class="text-center align-middle small">{{ field.label }}</th>
+              {% endfor %}
+              <th class="text-center align-middle small">
+                {% trans 'X' %}
+              </th>
+            </tr>
+          </thead>
+          <tbody id="chemicals-tbody">
+            {% for form in chemical_formset %}
+              <tr class="chemical-form-row">
+                {% for field in form.visible_fields %}
+                  {% if field.name == 'cas_number' %}
+                    <td class="align-middle p-1">
+                      <div class="d-flex flex-column align-items-center">
+                        {{ field }}
+                        <button type="button" class="btn btn-custom mt-1 autopopulate-btn" title="{% trans 'Buscar datos' %}">{% trans 'Buscar datos' %}</button>
+                      </div>
+                    </td>
+                  {% else %}
+                    <td class="align-middle p-1">
+                      {{ field }}
+                    </td>
+                  {% endif %}
+                {% endfor %}
+                <td class="align-middle p-1">
+                  <button type="button" class="btn btn-danger btn-sm remove-chemical">{% trans 'X' %}</button>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <!-- Add button for new row -->
+      <button type="button" class="btn btn-custom px-1" id="add-chemical">{% trans 'Agregar sustancia' %}</button>
+      <button type="submit" class="btn btn-custom px-1">{% trans 'Guardar Cuadro de Sustancias' %}</button>
+      <!-- Hidden empty form template for JS -->
+      <template id="empty-form-template">
+        <tr class="chemical-form-row">
+          {% for field in chemical_formset.empty_form.visible_fields %}
+            {% if field.name == 'cas_number' %}
+              <td class="align-middle p-1">
+                <div class="d-flex flex-column align-items-center">
+                  {{ field }}
+                  <button type="button" class="btn btn-custom mt-1 autopopulate-btn" title="{% trans 'Buscar datos' %}">{% trans 'Buscar datos' %}</button>
+                </div>
+              </td>
+            {% else %}
+              <td class="align-middle p-1">
+                {{ field }}
+              </td>
+            {% endif %}
+          {% endfor %}
+          <td class="align-middle p-1">
+            <button type="button" class="btn btn-danger btn-sm remove-chemical">{% trans 'X' %}</button>
+          </td>
+        </tr>
+      </template>
+    </form>
+  </div>
+  <script>
+    let CHEMTABLE_AUTOPOP_URL = "{% url 'chemtable_autopopulate' %}";
+  </script>
+  <script src="{% static 'app1/chemtable.js' %}"></script>
+{% endblock %}

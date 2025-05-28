@@ -1,0 +1,23 @@
+<!-- templates/msds_done.html -->
+{% extends 'layout.html' %}
+{% load i18n %}
+
+{% block body %}
+  <div class="container">
+    <h1>{% trans "HDS creada exitosamente" %}</h1>
+    <p>{% trans "Su hoja de datos de seguridad ha sido creada con éxito." %}</p>
+
+    <p>
+      {% trans "Si la descarga no empieza, " %} 
+      <a id="downloadLink" href="{% url 'generate_msds_pdf' msds.id %}">{% trans "Presiona aquí" %}</a>.
+    </p>
+    <!-- Optionally display some details or a summary -->
+    <a href="{% url 'home' %}" class="btn btn-primary">{% trans "Regresar a Inicio" %}</a>
+  </div>
+  <script>
+    window.onload = function() {
+        var msdsId = "{{ msds.id }}";
+        window.location.href = "/msds/" + msdsId + "/pdf/";
+    };
+  </script>
+{% endblock %}
