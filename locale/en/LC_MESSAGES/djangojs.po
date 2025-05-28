@@ -1,0 +1,507 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-20 14:06-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\app1\static\admin\js\SelectFilter2.js:41
+#: .\static\admin\js\SelectFilter2.js:41
+#: .\staticfiles\admin\js\SelectFilter2.js:41
+#, javascript-format
+msgid "Available %s"
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:47
+#: .\static\admin\js\SelectFilter2.js:47
+#: .\staticfiles\admin\js\SelectFilter2.js:47
+#, javascript-format
+msgid ""
+"This is the list of available %s. You may choose some by selecting them in "
+"the box below and then clicking the \"Choose\" arrow between the two boxes."
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:63
+#: .\static\admin\js\SelectFilter2.js:63
+#: .\staticfiles\admin\js\SelectFilter2.js:63
+#, javascript-format
+msgid "Type into this box to filter down the list of available %s."
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:68
+#: .\app1\static\admin\js\SelectFilter2.js:113
+#: .\static\admin\js\SelectFilter2.js:68 .\static\admin\js\SelectFilter2.js:113
+#: .\staticfiles\admin\js\SelectFilter2.js:68
+#: .\staticfiles\admin\js\SelectFilter2.js:113
+msgid "Filter"
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:72
+#: .\static\admin\js\SelectFilter2.js:72
+#: .\staticfiles\admin\js\SelectFilter2.js:72
+msgid "Choose all"
+msgstr "Seleccione todos"
+
+#: .\app1\static\admin\js\SelectFilter2.js:72
+#: .\static\admin\js\SelectFilter2.js:72
+#: .\staticfiles\admin\js\SelectFilter2.js:72
+#, javascript-format
+msgid "Click to choose all %s at once."
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:78
+#: .\static\admin\js\SelectFilter2.js:78
+#: .\staticfiles\admin\js\SelectFilter2.js:78
+msgid "Choose"
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:80
+#: .\static\admin\js\SelectFilter2.js:80
+#: .\staticfiles\admin\js\SelectFilter2.js:80
+msgid "Remove"
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:86
+#: .\static\admin\js\SelectFilter2.js:86
+#: .\staticfiles\admin\js\SelectFilter2.js:86
+#, javascript-format
+msgid "Chosen %s"
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:92
+#: .\static\admin\js\SelectFilter2.js:92
+#: .\staticfiles\admin\js\SelectFilter2.js:92
+#, javascript-format
+msgid ""
+"This is the list of chosen %s. You may remove some by selecting them in the "
+"box below and then clicking the \"Remove\" arrow between the two boxes."
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:108
+#: .\static\admin\js\SelectFilter2.js:108
+#: .\staticfiles\admin\js\SelectFilter2.js:108
+#, javascript-format
+msgid "Type into this box to filter down the list of selected %s."
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:123
+#: .\static\admin\js\SelectFilter2.js:123
+#: .\staticfiles\admin\js\SelectFilter2.js:123
+msgid "Remove all"
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:123
+#: .\static\admin\js\SelectFilter2.js:123
+#: .\staticfiles\admin\js\SelectFilter2.js:123
+#, javascript-format
+msgid "Click to remove all chosen %s at once."
+msgstr ""
+
+#: .\app1\static\admin\js\SelectFilter2.js:214
+#: .\static\admin\js\SelectFilter2.js:214
+#: .\staticfiles\admin\js\SelectFilter2.js:214
+#, javascript-format
+msgid "%s selected option not visible"
+msgid_plural "%s selected options not visible"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\app1\static\admin\js\actions.js:67 .\static\admin\js\actions.js:67
+#: .\staticfiles\admin\js\actions.js:67
+msgid "%(sel)s of %(cnt)s selected"
+msgid_plural "%(sel)s of %(cnt)s selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\app1\static\admin\js\actions.js:161 .\static\admin\js\actions.js:161
+#: .\staticfiles\admin\js\actions.js:161
+msgid ""
+"You have unsaved changes on individual editable fields. If you run an "
+"action, your unsaved changes will be lost."
+msgstr ""
+
+#: .\app1\static\admin\js\actions.js:174 .\static\admin\js\actions.js:174
+#: .\staticfiles\admin\js\actions.js:174
+msgid ""
+"You have selected an action, but you haven’t saved your changes to "
+"individual fields yet. Please click OK to save. You’ll need to re-run the "
+"action."
+msgstr ""
+
+#: .\app1\static\admin\js\actions.js:175 .\static\admin\js\actions.js:175
+#: .\staticfiles\admin\js\actions.js:175
+msgid ""
+"You have selected an action, and you haven’t made any changes on individual "
+"fields. You’re probably looking for the Go button rather than the Save "
+"button."
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:13
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:110
+#: .\static\admin\js\admin\DateTimeShortcuts.js:13
+#: .\static\admin\js\admin\DateTimeShortcuts.js:110
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:13
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:110
+msgid "Now"
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:14
+#: .\static\admin\js\admin\DateTimeShortcuts.js:14
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:14
+msgid "Midnight"
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:15
+#: .\static\admin\js\admin\DateTimeShortcuts.js:15
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:15
+msgid "6 a.m."
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:16
+#: .\static\admin\js\admin\DateTimeShortcuts.js:16
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:16
+msgid "Noon"
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:17
+#: .\static\admin\js\admin\DateTimeShortcuts.js:17
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:17
+msgid "6 p.m."
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:78
+#: .\static\admin\js\admin\DateTimeShortcuts.js:78
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:78
+#, javascript-format
+msgid "Note: You are %s hour ahead of server time."
+msgid_plural "Note: You are %s hours ahead of server time."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:86
+#: .\static\admin\js\admin\DateTimeShortcuts.js:86
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:86
+#, javascript-format
+msgid "Note: You are %s hour behind server time."
+msgid_plural "Note: You are %s hours behind server time."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:128
+#: .\static\admin\js\admin\DateTimeShortcuts.js:128
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:128
+msgid "Choose a Time"
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:158
+#: .\static\admin\js\admin\DateTimeShortcuts.js:158
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:158
+msgid "Choose a time"
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:175
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:333
+#: .\static\admin\js\admin\DateTimeShortcuts.js:175
+#: .\static\admin\js\admin\DateTimeShortcuts.js:333
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:175
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:333
+msgid "Cancel"
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:238
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:318
+#: .\static\admin\js\admin\DateTimeShortcuts.js:238
+#: .\static\admin\js\admin\DateTimeShortcuts.js:318
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:238
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:318
+msgid "Today"
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:255
+#: .\static\admin\js\admin\DateTimeShortcuts.js:255
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:255
+msgid "Choose a Date"
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:312
+#: .\static\admin\js\admin\DateTimeShortcuts.js:312
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:312
+msgid "Yesterday"
+msgstr ""
+
+#: .\app1\static\admin\js\admin\DateTimeShortcuts.js:324
+#: .\static\admin\js\admin\DateTimeShortcuts.js:324
+#: .\staticfiles\admin\js\admin\DateTimeShortcuts.js:324
+msgid "Tomorrow"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:11 .\static\admin\js\calendar.js:11
+#: .\staticfiles\admin\js\calendar.js:11
+msgid "January"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:12 .\static\admin\js\calendar.js:12
+#: .\staticfiles\admin\js\calendar.js:12
+msgid "February"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:13 .\static\admin\js\calendar.js:13
+#: .\staticfiles\admin\js\calendar.js:13
+msgid "March"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:14 .\static\admin\js\calendar.js:14
+#: .\staticfiles\admin\js\calendar.js:14
+msgid "April"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:15 .\static\admin\js\calendar.js:15
+#: .\staticfiles\admin\js\calendar.js:15
+msgid "May"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:16 .\static\admin\js\calendar.js:16
+#: .\staticfiles\admin\js\calendar.js:16
+msgid "June"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:17 .\static\admin\js\calendar.js:17
+#: .\staticfiles\admin\js\calendar.js:17
+msgid "July"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:18 .\static\admin\js\calendar.js:18
+#: .\staticfiles\admin\js\calendar.js:18
+msgid "August"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:19 .\static\admin\js\calendar.js:19
+#: .\staticfiles\admin\js\calendar.js:19
+msgid "September"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:20 .\static\admin\js\calendar.js:20
+#: .\staticfiles\admin\js\calendar.js:20
+msgid "October"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:21 .\static\admin\js\calendar.js:21
+#: .\staticfiles\admin\js\calendar.js:21
+msgid "November"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:22 .\static\admin\js\calendar.js:22
+#: .\staticfiles\admin\js\calendar.js:22
+msgid "December"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:25 .\static\admin\js\calendar.js:25
+#: .\staticfiles\admin\js\calendar.js:25
+msgctxt "abbrev. month January"
+msgid "Jan"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:26 .\static\admin\js\calendar.js:26
+#: .\staticfiles\admin\js\calendar.js:26
+msgctxt "abbrev. month February"
+msgid "Feb"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:27 .\static\admin\js\calendar.js:27
+#: .\staticfiles\admin\js\calendar.js:27
+msgctxt "abbrev. month March"
+msgid "Mar"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:28 .\static\admin\js\calendar.js:28
+#: .\staticfiles\admin\js\calendar.js:28
+msgctxt "abbrev. month April"
+msgid "Apr"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:29 .\static\admin\js\calendar.js:29
+#: .\staticfiles\admin\js\calendar.js:29
+msgctxt "abbrev. month May"
+msgid "May"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:30 .\static\admin\js\calendar.js:30
+#: .\staticfiles\admin\js\calendar.js:30
+msgctxt "abbrev. month June"
+msgid "Jun"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:31 .\static\admin\js\calendar.js:31
+#: .\staticfiles\admin\js\calendar.js:31
+msgctxt "abbrev. month July"
+msgid "Jul"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:32 .\static\admin\js\calendar.js:32
+#: .\staticfiles\admin\js\calendar.js:32
+msgctxt "abbrev. month August"
+msgid "Aug"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:33 .\static\admin\js\calendar.js:33
+#: .\staticfiles\admin\js\calendar.js:33
+msgctxt "abbrev. month September"
+msgid "Sep"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:34 .\static\admin\js\calendar.js:34
+#: .\staticfiles\admin\js\calendar.js:34
+msgctxt "abbrev. month October"
+msgid "Oct"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:35 .\static\admin\js\calendar.js:35
+#: .\staticfiles\admin\js\calendar.js:35
+msgctxt "abbrev. month November"
+msgid "Nov"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:36 .\static\admin\js\calendar.js:36
+#: .\staticfiles\admin\js\calendar.js:36
+msgctxt "abbrev. month December"
+msgid "Dec"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:39 .\static\admin\js\calendar.js:39
+#: .\staticfiles\admin\js\calendar.js:39
+msgid "Sunday"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:40 .\static\admin\js\calendar.js:40
+#: .\staticfiles\admin\js\calendar.js:40
+msgid "Monday"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:41 .\static\admin\js\calendar.js:41
+#: .\staticfiles\admin\js\calendar.js:41
+msgid "Tuesday"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:42 .\static\admin\js\calendar.js:42
+#: .\staticfiles\admin\js\calendar.js:42
+msgid "Wednesday"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:43 .\static\admin\js\calendar.js:43
+#: .\staticfiles\admin\js\calendar.js:43
+msgid "Thursday"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:44 .\static\admin\js\calendar.js:44
+#: .\staticfiles\admin\js\calendar.js:44
+msgid "Friday"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:45 .\static\admin\js\calendar.js:45
+#: .\staticfiles\admin\js\calendar.js:45
+msgid "Saturday"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:48 .\static\admin\js\calendar.js:48
+#: .\staticfiles\admin\js\calendar.js:48
+msgctxt "abbrev. day Sunday"
+msgid "Sun"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:49 .\static\admin\js\calendar.js:49
+#: .\staticfiles\admin\js\calendar.js:49
+msgctxt "abbrev. day Monday"
+msgid "Mon"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:50 .\static\admin\js\calendar.js:50
+#: .\staticfiles\admin\js\calendar.js:50
+msgctxt "abbrev. day Tuesday"
+msgid "Tue"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:51 .\static\admin\js\calendar.js:51
+#: .\staticfiles\admin\js\calendar.js:51
+msgctxt "abbrev. day Wednesday"
+msgid "Wed"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:52 .\static\admin\js\calendar.js:52
+#: .\staticfiles\admin\js\calendar.js:52
+msgctxt "abbrev. day Thursday"
+msgid "Thur"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:53 .\static\admin\js\calendar.js:53
+#: .\staticfiles\admin\js\calendar.js:53
+msgctxt "abbrev. day Friday"
+msgid "Fri"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:54 .\static\admin\js\calendar.js:54
+#: .\staticfiles\admin\js\calendar.js:54
+msgctxt "abbrev. day Saturday"
+msgid "Sat"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:57 .\static\admin\js\calendar.js:57
+#: .\staticfiles\admin\js\calendar.js:57
+msgctxt "one letter Sunday"
+msgid "S"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:58 .\static\admin\js\calendar.js:58
+#: .\staticfiles\admin\js\calendar.js:58
+msgctxt "one letter Monday"
+msgid "M"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:59 .\static\admin\js\calendar.js:59
+#: .\staticfiles\admin\js\calendar.js:59
+msgctxt "one letter Tuesday"
+msgid "T"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:60 .\static\admin\js\calendar.js:60
+#: .\staticfiles\admin\js\calendar.js:60
+msgctxt "one letter Wednesday"
+msgid "W"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:61 .\static\admin\js\calendar.js:61
+#: .\staticfiles\admin\js\calendar.js:61
+msgctxt "one letter Thursday"
+msgid "T"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:62 .\static\admin\js\calendar.js:62
+#: .\staticfiles\admin\js\calendar.js:62
+msgctxt "one letter Friday"
+msgid "F"
+msgstr ""
+
+#: .\app1\static\admin\js\calendar.js:63 .\static\admin\js\calendar.js:63
+#: .\staticfiles\admin\js\calendar.js:63
+msgctxt "one letter Saturday"
+msgid "S"
+msgstr ""
+
+#: .\staticfiles\app1\chemtable.js:15
+msgid "Por favor, ingrese un Número CAS."
+msgstr "Please enter a CAS number."
+
+#: .\staticfiles\app1\chemtable.js:44
+msgid "Error al obtener los datos. Intente nuevamente."msgstr "Error retrieving data. Please try again."

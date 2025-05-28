@@ -22,4 +22,5 @@ def chemtable_autopopulate(request):
         'solubility': get_solu(cid),
         'acute_toxicity_estimates': get_immi_eff(cid),
     }
+    logger.debug(f"Toxicidad enviada: {data['acute_toxicity_estimates']}")
     return JsonResponse(data)

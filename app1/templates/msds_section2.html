@@ -90,14 +90,19 @@
             <!-- Precautionary Statements Sections -->
             {% for category in categories %}
                 <div class="form-group">
+                    <div class="subtitle" style="font-size: 1.08rem; font-weight: 500; color: #666; margin-bottom: 6px;">
+                        {{ subcategory_labels|get_item:category }}
+                    </div>
                     <div id="{{ category }}-statements-fields" class="form-input-field"></div>
                     <div class="mt-2">
-                        <button type="button" id="add-{{ category }}-statement" class="btn btn-custom" title="{% trans 'Add' %} {{ category|capfirst }} {% trans 'Statement' %}">
+                        <button type="button" id="add-{{ category }}-statement" class="btn btn-custom" title="{% trans 'Agregar' %} {{ subcategory_labels|get_item:category }} {% trans 'Frase' %}">
                             +
                         </button>
                     </div>
                 </div>
             {% endfor %}
+
+
 
             {% for field in wizard.form %}
                 {% if field.name not in 'classification,label_elements,additional_pictograms,hazard_statements,general_statements,prevention_statements,response_statements,storage_statements,disposal_statements' %}

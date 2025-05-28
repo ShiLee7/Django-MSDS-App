@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ExtracSol 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-21 16:12-0600\n"
+"POT-Creation-Date: 2025-05-28 15:21-0600\n"
 "PO-Revision-Date: 2025-01-15 16:30-0600\n"
 "Last-Translator: Leonardo Jiménez <info@extracsol.com>\n"
 "Language-Team: English <en@extracsol.com>\n"
@@ -120,6 +120,22 @@ msgstr "Synonyms"
 #: .\app1\templates\msds_section3.html:66
 msgid "Concentración"
 msgstr "Concentration"
+
+#: .\app1\forms.py:396 .\app1\forms.py:399
+msgid "Nombre"
+msgstr "Name"
+
+#: .\app1\forms.py:405 .\app1\forms.py:408
+msgid "Correo electrónico"
+msgstr "Email Address"
+
+#: .\app1\forms.py:415 .\app1\forms.py:418
+msgid "Asunto"
+msgstr "Subject"
+
+#: .\app1\forms.py:424 .\app1\forms.py:427
+msgid "Mensaje"
+msgstr "Message"
 
 #: .\app1\models.py:6
 msgid "Nombre del Producto"
@@ -529,19 +545,19 @@ msgstr "UN Number"
 msgid "Nombre de Envío Adecuado ONU"
 msgstr "UN Proper Shipping Name"
 
-#: .\app1\models.py:340 .\app1\templates\msds_section14.html:50
+#: .\app1\models.py:340 .\app1\templates\msds_section14.html:53
 msgid "Clase de Peligro para el Transporte"
 msgstr "Transport Hazard Class"
 
-#: .\app1\models.py:344 .\app1\templates\msds_section14.html:75
+#: .\app1\models.py:344 .\app1\templates\msds_section14.html:78
 msgid "Grupo de Embalaje"
 msgstr "Packing Group"
 
-#: .\app1\models.py:348 .\app1\templates\msds_section14.html:87
+#: .\app1\models.py:348 .\app1\templates\msds_section14.html:90
 msgid "Peligros Ambientales"
 msgstr "Environmental Hazards"
 
-#: .\app1\models.py:352 .\app1\templates\msds_section14.html:99
+#: .\app1\models.py:352 .\app1\templates\msds_section14.html:102
 msgid "Precauciones Especiales"
 msgstr "Special Precautions"
 
@@ -628,43 +644,19 @@ msgstr ""
 msgid "E-mail:"
 msgstr "Email:"
 
-#: .\app1\templates\_contact.html:19
+#: .\app1\templates\_contact.html:20
 msgid "Tel:"
 msgstr "Phone:"
 
-#: .\app1\templates\_contact.html:28
-msgid "Nombre"
-msgstr "Name"
+#: .\app1\templates\_contact.html:29
+msgid "¡Mensaje enviado exitosamente! Te responderemos pronto."
+msgstr "Message sent successfully! We will get back to you soon."
 
-#: .\app1\templates\_contact.html:31
-msgid "Correo electrónico"
-msgstr "Email Address"
-
-#: .\app1\templates\_contact.html:35
-msgid "Asunto"
-msgstr "Subject"
-
-#: .\app1\templates\_contact.html:38
-msgid "Mensaje"
-msgstr "Message"
-
-#: .\app1\templates\_contact.html:41
+#: .\app1\templates\_contact.html:77
 msgid "Enviar Mensaje"
 msgstr "Send Message"
 
-#: .\app1\templates\_contact.html:57 .\app1\templates\_contact.html:58
-msgid "Facebook"
-msgstr "Facebook"
-
-#: .\app1\templates\_contact.html:60
-msgid "Petal Pattern"
-msgstr "Petal Pattern"
-
-#: .\app1\templates\_contact.html:61 .\app1\templates\_contact.html:62
-msgid "Instagram"
-msgstr "Instagram"
-
-#: .\app1\templates\_contact.html:68
+#: .\app1\templates\_contact.html:107
 msgid "Todos los derechos reservados."
 msgstr "All rights reserved."
 
@@ -759,28 +751,36 @@ msgstr ""
 "design and certification of installations, water treatment, or professional "
 "training, at ExtracSol we strive to make a difference."
 
+#: .\app1\templates\chemtable.html:4
+msgid "Por favor, ingrese un Número CAS."
+msgstr "Please enter a CAS number."
+
 #: .\app1\templates\chemtable.html:5
+msgid "Error al obtener los datos. Intente nuevamente."
+msgstr "Error retrieving data. Please try again."
+
+#: .\app1\templates\chemtable.html:9
 msgid "Crear Cuadro de constantes"
 msgstr "Create Table of Constants"
 
-#: .\app1\templates\chemtable.html:15
+#: .\app1\templates\chemtable.html:19
 msgid "Sustancias químicas"
 msgstr "Chemical"
 
-#: .\app1\templates\chemtable.html:39 .\app1\templates\chemtable.html:61
-#: .\app1\templates\chemtable.html:89
+#: .\app1\templates\chemtable.html:43 .\app1\templates\chemtable.html:65
+#: .\app1\templates\chemtable.html:93
 msgid "X"
 msgstr "X"
 
-#: .\app1\templates\chemtable.html:51 .\app1\templates\chemtable.html:79
+#: .\app1\templates\chemtable.html:55 .\app1\templates\chemtable.html:83
 msgid "Buscar datos"
 msgstr "Look for data"
 
-#: .\app1\templates\chemtable.html:69
+#: .\app1\templates\chemtable.html:73
 msgid "Agregar sustancia"
 msgstr "Add Substance"
 
-#: .\app1\templates\chemtable.html:70
+#: .\app1\templates\chemtable.html:74
 msgid "Guardar Cuadro de Sustancias"
 msgstr "Save Table of Constants"
 
@@ -994,19 +994,19 @@ msgstr "Logo"
 msgid "Servicios de Ing. Química"
 msgstr "Chemical Engineering Services"
 
-#: .\app1\templates\layout.html:45
+#: .\app1\templates\layout.html:46 .\app1\templates\layout.html:50
 msgid "Contacto"
 msgstr "Contact"
 
-#: .\app1\templates\layout.html:48
+#: .\app1\templates\layout.html:55
 msgid "Artículos"
 msgstr "Articles"
 
-#: .\app1\templates\layout.html:54
+#: .\app1\templates\layout.html:61
 msgid "Español"
 msgstr "Spanish"
 
-#: .\app1\templates\layout.html:55
+#: .\app1\templates\layout.html:62
 msgid "English"
 msgstr "English"
 
@@ -1027,22 +1027,22 @@ msgid "Volver al Inicio"
 msgstr "Back to Home"
 
 #: .\app1\templates\msds_base_form.html:21
-#: .\app1\templates\msds_section14.html:138
-#: .\app1\templates\msds_section2.html:124
+#: .\app1\templates\msds_section14.html:141
+#: .\app1\templates\msds_section2.html:129
 #: .\app1\templates\msds_section3.html:99
 msgid "Anterior"
 msgstr "Previous"
 
 #: .\app1\templates\msds_base_form.html:25
-#: .\app1\templates\msds_section14.html:140
-#: .\app1\templates\msds_section2.html:126
+#: .\app1\templates\msds_section14.html:143
+#: .\app1\templates\msds_section2.html:131
 #: .\app1\templates\msds_section3.html:101
 msgid "Siguiente"
 msgstr "Next"
 
 #: .\app1\templates\msds_base_form.html:27
-#: .\app1\templates\msds_section14.html:140
-#: .\app1\templates\msds_section2.html:126
+#: .\app1\templates\msds_section14.html:143
+#: .\app1\templates\msds_section2.html:131
 #: .\app1\templates\msds_section3.html:101
 #, fuzzy
 #| msgid "Enviar Mensaje"
@@ -1105,31 +1105,37 @@ msgid ""
 "continuación."
 msgstr "Please provide the Disposal considerations below."
 
-#: .\app1\templates\msds_section14.html:6
+#: .\app1\templates\msds_section14.html:4
+#, fuzzy
+#| msgid "Agregar Pictogramas Adicionales"
+msgid "Se han guardado los Pictogramas seleccionados"
+msgstr "Add Additional Pictograms"
+
+#: .\app1\templates\msds_section14.html:9
 msgid "Sección 14: Información sobre el Transporte"
 msgstr "Section 14: Transport information"
 
-#: .\app1\templates\msds_section14.html:7
+#: .\app1\templates\msds_section14.html:10
 msgid "Por favor, proporcione los detalles sobre el transporte a continuación."
 msgstr "Please provide the Transport information below."
 
-#: .\app1\templates\msds_section14.html:26
+#: .\app1\templates\msds_section14.html:29
 msgid "Número UN"
 msgstr "UN Number"
 
-#: .\app1\templates\msds_section14.html:38
+#: .\app1\templates\msds_section14.html:41
 msgid "Nombre de Transporte UN"
 msgstr "Transport UN Name"
 
-#: .\app1\templates\msds_section14.html:62
+#: .\app1\templates\msds_section14.html:65
 msgid "Elija los Pictogramas del Modelo UN"
 msgstr "Choose the appropiate UN Pictograms"
 
-#: .\app1\templates\msds_section14.html:71
+#: .\app1\templates\msds_section14.html:74
 msgid "Guardar Pictogramas"
 msgstr "Save Pictograms"
 
-#: .\app1\templates\msds_section14.html:111
+#: .\app1\templates\msds_section14.html:114
 msgid "Consideraciones para Transporte a Granel"
 msgstr "Transport in Bulk Considerations"
 
@@ -1191,13 +1197,13 @@ msgstr "Update Pictograms"
 msgid "Frases de Precaución"
 msgstr "Prevention Statements"
 
-#: .\app1\templates\msds_section2.html:95
-msgid "Add"
-msgstr "Agregar"
+#: .\app1\templates\msds_section2.html:98
+msgid "Agregar"
+msgstr ""
 
-#: .\app1\templates\msds_section2.html:95
-msgid "Statement"
-msgstr "Declaración"
+#: .\app1\templates\msds_section2.html:98
+msgid "Frase"
+msgstr ""
 
 #: .\app1\templates\msds_section3.html:6
 msgid "Sección 3: Composición/Información sobre los ingredientes"
@@ -1287,6 +1293,65 @@ msgid ""
 "Por favor, proporcione los detalles de las propiedades físicas y químicas a "
 "continuación."
 msgstr "Please provide the Physical and chemical properties details below."
+
+#: .\app1\views\contact_view.py:16
+#, python-format
+msgid ""
+"Mensaje de: %(name)s <%(email)s>\n"
+"\n"
+"%(msg)s"
+msgstr ""
+"Message from: %(name)s <%(email)s>\n"
+"\n"
+"%(msg)s"
+
+#: .\app1\views\contact_view.py:22
+#, python-format
+msgid "Contacto desde extracsol.com: %(subject)s"
+msgstr "Contact from extracsol.com: %(subject)s"
+
+#: .\app1\views\contact_view.py:31
+msgid "No se pudo enviar el mensaje. Intenta de nuevo más tarde."
+msgstr "The message could not be sent. Please try again later."
+
+#: .\app1\views\contact_view.py:33
+msgid "Por favor completa todos los campos correctamente."
+msgstr "Please fill in all fields correctly."
+
+#: .\app1\views\sds_wizard_view.py:502
+msgid "General"
+msgstr "General"
+
+#: .\app1\views\sds_wizard_view.py:503
+msgid "Prevención"
+msgstr "Prevention Statements"
+
+#: .\app1\views\sds_wizard_view.py:504
+msgid "Respuesta"
+msgstr "Response Statements"
+
+#: .\app1\views\sds_wizard_view.py:505
+msgid "Almacenamiento"
+msgstr "Storage Statements"
+
+#: .\app1\views\sds_wizard_view.py:506
+msgid "Eliminación"
+msgstr "Disposal Statements"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Petal Pattern"
+#~ msgstr "Petal Pattern"
+
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+#~ msgid "Add"
+#~ msgstr "Agregar"
+
+#~ msgid "Statement"
+#~ msgstr "Declaración"
 
 #, fuzzy
 #~| msgid "Servicios de Fintech"

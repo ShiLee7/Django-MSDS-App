@@ -41,9 +41,16 @@
             <li class="nav-item">
                 <a class="nav-link roboto-medium color-dorado" href="{% url 'about' %}">{% translate "Acerca de" %}</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link roboto-medium color-dorado" href="#contact">{% translate "Contacto" %}</a>
-            </li>
+            {% if show_contact %}
+                <li class="nav-item">
+                    <a class="nav-link roboto-medium color-dorado" href="#contact">{% translate "Contacto" %}</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link roboto-medium color-dorado" href="{% url 'home' %}#contact">{% translate "Contacto" %}</a>
+                </li>
+            {% endif %}
+
             <li class="nav-item">
                 <a class="nav-link roboto-medium color-dorado" href="{% url 'maintenance' %}">{% translate "Artículos" %}</a>
             </li>
@@ -64,7 +71,9 @@
         {% endblock %}
     </div>
 
-    {% include "_contact.html" %}
+    {% if show_contact %}
+        {% include "_contact.html" %}
+    {% endif %}
 
 </body>
 </html>

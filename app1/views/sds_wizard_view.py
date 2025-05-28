@@ -1,24 +1,14 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render
 from app1.forms import *
 from app1.models import *
 from app1.constants import *
 from formtools.wizard.views import SessionWizardView
 from app1.utils import *
-from django.utils.html import escapejs
 from reportlab.lib.pagesizes import A4
-from reportlab.platypus import BaseDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, Frame, PageTemplate, Flowable, Image as RLImage, KeepTogether
-from reportlab.lib import colors
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.utils import ImageReader
-from reportlab.lib.units import inch
-from django.contrib.staticfiles import finders
-from io import BytesIO
-from django.http import HttpResponse
+from django.utils.translation import gettext as _
 
-import datetime
 import json
 import logging
-import requests
 
 logger = logging.getLogger(__name__)
 
@@ -504,9 +494,19 @@ class MSDSWizard(SessionWizardView):
 
             categories = ['general', 'prevention', 'response', 'storage', 'disposal']
             context['initial_precautionary_statements_json'] = json.dumps({
-                category: cached_data.get(f'{category}_precautionary_statements', '') for category in categories
+                category: cached_data.get(f'{category}_statements', '') for category in categories
             })
             context['categories'] = categories
+
+            subcategory_labels = {
+                'general': _('General'),
+                'prevention': _('Prevención'),
+                'response': _('Respuesta'),
+                'storage': _('Almacenamiento'),
+                'disposal': _('Eliminación'),
+            }
+            context['subcategory_labels'] = subcategory_labels
+
 
         if self.steps.current == 'section3':
             cached_data = self.storage.data.get('section3_cached_data', {})

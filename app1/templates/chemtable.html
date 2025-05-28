@@ -1,5 +1,9 @@
 {% extends 'layout.html' %}
 {% load static i18n %}
+<script>
+    var MSG_ENTER_CAS = "{% trans 'Por favor, ingrese un Número CAS.' %}";
+    var MSG_ERROR_FETCH = "{% trans 'Error al obtener los datos. Intente nuevamente.' %}";
+</script>
 {% block body %}
   <div class="section-header chemtable-form">
     <h3>{% trans 'Crear Cuadro de constantes' %}</h3>

@@ -388,3 +388,44 @@ ChemicalFormSet = inlineformset_factory(
     extra=1,  # Start with one chemical row by default
     can_delete=True
 )
+
+class ContactForm(forms.Form):
+    name = forms.CharField(
+        max_length=100,
+        required=True,
+        label=_("Nombre"),
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': _("Nombre"),
+            'required': True
+        })
+    )
+    email = forms.EmailField(
+        required=True,
+        label=_("Correo electrónico"),
+        widget=forms.EmailInput(attrs={
+            'class': 'form-control',
+            'placeholder': _("Correo electrónico"),
+            'required': True
+        })
+    )
+    subject = forms.CharField(
+        max_length=150,
+        required=True,
+        label=_("Asunto"),
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': _("Asunto"),
+            'required': True
+        })
+    )
+    message = forms.CharField(
+        required=True,
+        label=_("Mensaje"),
+        widget=forms.Textarea(attrs={
+            'class': 'form-control',
+            'placeholder': _("Mensaje"),
+            'rows': 5,
+            'required': True
+        })
+    )

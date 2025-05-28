@@ -4,43 +4,82 @@
 <section id="contact" class="py-5">
     <div class="container">
         <h2 class="text-center roboto-medium color-dorado mb-5">{% trans "Contáctanos" %}</h2>
-        
+
         <!-- Introduction Text -->
         <p class="text-center mb-4 roboto-medium">
             {% blocktrans %}¿Tienes un proyecto en mente? Nos encantaría ayudarte a hacerlo realidad. Para obtener un presupuesto o recibir asesoría personalizada, contáctanos por:{% endblocktrans %}
         </p>
-        
+
         <!-- Contact Information -->
         <div class="text-center mb-5">
             <p class="mb-2 roboto-medium">
-                <strong>{% trans "E-mail:" %}</strong> <a href="mailto:info@extracsol.com" class="color-dorado contact-link">info@extracsol.com</a>
+                <strong>{% trans "E-mail:" %}</strong>
+                <a href="mailto:info@extracsol.com" class="color-dorado contact-link">info@extracsol.com</a>
             </p>
             <p class="mb-0 roboto-medium">
-                <strong>{% trans "Tel:" %}</strong> <a href="tel:+50688007218" class="color-dorado contact-link">(506) 8800 7218</a>
+                <strong>{% trans "Tel:" %}</strong>
+                <a href="tel:+50688007218" class="color-dorado contact-link">(506) 8800 7218</a>
             </p>
         </div>
 
-        <!-- Contact Form (optional) -->
-        <form>
-            <!-- Form Fields -->
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <input type="text" class="form-control" placeholder="{% trans 'Nombre' %}" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <input type="email" class="form-control" placeholder="{% trans 'Correo electrónico' %}" required>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                {% if success %}
+                    <div class="alert alert-success text-center mb-4" role="alert">
+                        {% trans "¡Mensaje enviado exitosamente! Te responderemos pronto." %}
+                    </div>
+                {% elif error %}
+                    <div class="alert alert-danger text-center mb-4" role="alert">
+                        {{ error }}
+                    </div>
+                {% endif %}
+
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <input type="hidden" name="contact_form_submitted" value="1">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form.name }}
+                            {% if form.name.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.name.errors.as_text }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.email.errors.as_text }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        {{ form.subject }}
+                        {% if form.subject.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.subject.errors.as_text }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.message }}
+                        {% if form.message.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.message.errors.as_text }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-custom">
+                            {% trans "Enviar Mensaje" %}
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="mb-3">
-                <input type="text" class="form-control" placeholder="{% trans 'Asunto' %}" required>
-            </div>
-            <div class="mb-3">
-                <textarea class="form-control" rows="5" placeholder="{% trans 'Mensaje' %}" required></textarea>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-custom">{% trans "Enviar Mensaje" %}</button>
-            </div>
-        </form>
+        </div>
     </div>
 </section>
 
@@ -54,12 +93,12 @@
     <section id="social-media" class="py-3">
         <div class="container text-center">
             <div class="d-flex justify-content-center">
-                <a href="https://facebook.com/yourpage" target="_blank" class="mx-3" aria-label="{% trans 'Facebook' %}">
-                    <img src="{% static 'images/icons8-facebook-logo-50.png' %}" alt="{% trans 'Facebook' %}" class="social-icon">
+                <a href="{% url 'maintenance' %}" target="_blank" class="mx-3" aria-label="Facebook">
+                    <img src="{% static 'images/icons8-facebook-logo-50.png' %}" alt="Facebook" class="social-icon">
                 </a>
-                <img src="{% static 'images/sun.svg' %}" alt="{% trans 'Petal Pattern' %}" class="mx-3 svg-image">
-                <a href="https://instagram.com/yourpage" target="_blank" class="mx-3" aria-label="{% trans 'Instagram' %}">
-                    <img src="{% static 'images/icons8-instagram-logo-50.png' %}" alt="{% trans 'Instagram' %}" class="social-icon">
+                <img src="{% static 'images/sun.svg' %}" class="mx-3 svg-image">
+                <a href="{% url 'maintenance' %}" target="_blank" class="mx-3" aria-label="Instagram">
+                    <img src="{% static 'images/icons8-instagram-logo-50.png' %}" alt="Instagram" class="social-icon">
                 </a>
             </div>
         </div>

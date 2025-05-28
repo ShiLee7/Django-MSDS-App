@@ -18,6 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Optional: Provide user feedback (e.g., show a message)
-        alert("Selected pictograms have been saved!");
+        alert(window.translatedPictogramsSaved);
     });
 });
