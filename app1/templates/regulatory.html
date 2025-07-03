@@ -1,0 +1,133 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+
+{% block body %}
+  <section class="reg-background reg-back-images">
+    {# You can define .reg-background in styles.css similar to .iq-background #}
+    <section class="services-section py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 white-text">{% trans 'Servicios regulatorios y de regencia en la elaboración, gestión y presentación de:' %}</h2>
+
+        <div class="row justify-content-center">
+          <!-- 1 Plan de Salud Ocupacional -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-heartbeat fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Planes de Salud Ocupacional' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 2 Plan de Emergencia -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-exclamation-triangle fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Planes de Emergencia' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 3 Plan Manejo de Desechos -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-recycle fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Planes de Manejo de Desechos' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 4 Reportes de Emisión de Gases -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-cloud fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Reportes de Emisión de Gases' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 5 Reportes por Vertido de Aguas Residuales -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-water fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Reportes por Vertido de Aguas Residuales' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 6 Permiso Operacional de Calderas -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-fire fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Permisos e Inspecciones Operacionales de Calderas y Recipientes a Presión' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 7 Estudio de Áreas Clasificadas -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-drafting-compass fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Estudios de Áreas Clasificadas' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 8 Registro de Alimentos -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-utensils fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Registros de Productos Químicos' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 12 Registro sistemas de GLP -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-gas-pump fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Certificaciones de Sistemas de GLP' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 15 Reporte de Lodos -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-dumpster fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Reportes de Lodos' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 17 Fichas de Transporte -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-truck fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Fichas de Transporte' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 18 Reportes ante ICD -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-file-signature fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Reportes ante el Instituto Costarricense de Drogas' %}</h5>
+              </div>
+            </div>
+          </div>
+          <!-- 19 Reportes Minae Energía < 12J -->
+          <div class="col-md-4 mb-4">
+            <div class="card bg-transparent border-0 text-center">
+              <div class="card-body">
+                <i class="fas fa-bolt fa-3x mb-3 white-text"></i>
+                <h5 class="card-title white-text">{% trans 'Reportes de Energía ante Ministerio de Ambiente y Energía < 12J' %}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+{% endblock %}

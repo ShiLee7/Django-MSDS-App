@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf.urls.i18n import set_language
 from django.views.generic import TemplateView
-from .views import home, iq, MSDSWizard, generate_msds_pdf, edu, about, maintenance
+from .views import home, iq, MSDSWizard, generate_msds_pdf, edu, about, maintenance, regulatory
 from .views.sds_wizard_view import FORMS
 from .views.create_chemtable import ChemTableCreateView
 from .views.chemtable_autopop_view import chemtable_autopopulate
@@ -21,4 +21,5 @@ urlpatterns = [
 	path('chemtable/autopopulate/', chemtable_autopopulate, name='chemtable_autopopulate'),
 	path('chemtable/success/<int:chemtable_id>/', TemplateView.as_view(template_name='chemtable_success.html'), name='chemtable_success'),
 	path("chemtable/<int:chemtable_id>/pdf/", generate_chemtable_pdf, name="generate_chemtable_pdf"),
+	path("regulatory", regulatory, name="regulatory")
 ]

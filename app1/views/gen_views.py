@@ -30,3 +30,9 @@ def maintenance(request):
     return render(request, 'maintenance.html', {
         "show_contact": False
     })
+
+def regulatory(request):
+    form, success, error = contact_section(request)
+    return render(request, 'regulatory.html', {
+        "form": form, "success": success, "error": error, "show_contact": True
+    })

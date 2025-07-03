@@ -5,8 +5,20 @@
 
 {% block body %}
 <div class="section-header">
-    <h3>{% trans "Sección 1: Identificación" %}</h3>
+    <h1>{% trans "Sección 1: Identificación" %}</h1>
     <p class="section-info">{% trans "Por favor, proporcione los detalles de identificación del producto a continuación." %}</p>
+
+    <div class="cta-highlight">
+        {% trans "¡Empiece a crear su Hoja de Datos de Seguridad de forma sencilla y cumpla con la normativa desde hoy mismo! Solo ingrese el número CAS de su sustancia y obtenga la información para su FDS." %}
+    </div>
+
     {{ block.super }}
+</div>
+
+<!-- Professional Disclaimer for SDS/MSDS Section 1 -->
+<div class="section-container" style="margin-bottom: 15px;">
+    <p style="font-size: 0.97rem; color: #6c757d; text-align: justify; margin: 0;">
+        {% trans "Descargo de responsabilidad: La información proporcionada en esta aplicación ha sido recopilada de fuentes consideradas confiables y públicas unicamente está destinada para fines informativos y de referencia. Extraction Solutions no asume responsabilidad por la exactitud, integridad o vigencia de los datos aquí presentados. El usuario es responsable de validar la información antes de tomar decisiones críticas en materia de seguridad, salud o cumplimiento regulatorio. La información proporcionada en esta aplicación no constituye asesoría legal, técnica ni garantiza la ausencia de riesgos. Ante cualquier duda, favor consultar a info@extracsol.com" %}
+    </p>
 </div>
 {% endblock %}

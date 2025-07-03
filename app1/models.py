@@ -94,67 +94,82 @@ class MSDS(models.Model):
 
     # Section 5: Fire-Fighting Measures
     suitable_extinguishing_media = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Medios de Extinción Adecuados")
     )
     specific_hazards_arising = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Peligros Específicos Derivados del Producto")
     )
     special_protective_actions = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Acciones de Protección Especial")
     )
 
     # Section 6: Accidental Release Measures
     personal_precautions = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Precauciones Personales")
     )
     protective_equipment = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000, 
         verbose_name=_("Equipo de Protección")
     )
     emergency_procedures = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Procedimientos de Emergencia")
     )
     environmental_precautions = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Precauciones Ambientales")
     )
     methods_and_materials_for_containment = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Métodos y Materiales para la Contención")
     )
 
     # Section 7: Handling and Storage
     precautions_for_safe_handling = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Precauciones para una Manipulación Segura")
     )
     conditions_for_safe_storage = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Condiciones para un Almacenamiento Seguro")
     )
 
     # Section 8: Exposure Controls/Personal Protection
     control_parameters = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000, 
         verbose_name=_("Parámetros de Control")
     )
     appropriate_engineering_controls = models.TextField(
-        blank=True, null=True, 
+        blank=True, null=True,
+        max_length=1000,
         verbose_name=_("Controles de Ingeniería Apropiados")
     )
     individual_protection_measures = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Medidas de Protección Individual")
     )
 
     # Section 9: Physical and Chemical Properties
     phys = models.TextField(
-        verbose_name=_("Estado Físico/Apariencia")
+        verbose_name=_("Estado Físico/Apariencia"),
+        max_length=1000,
+        blank=True, null=True
     )
     colour = models.CharField(
         max_length=200, blank=True, null=True, 
@@ -228,26 +243,32 @@ class MSDS(models.Model):
         # Section 10: Stability and Reactivity
     reactivity = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Reactividad")
     )
     chemical_stability = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Estabilidad Química")
     )
     possibility_of_hazardous_reactions = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Posibilidad de Reacciones Peligrosas")
     )
     conditions_to_avoid = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Condiciones a Evitar")
     )
     incompatible_materials = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Materiales Incompatibles")
     )
     hazardous_decomposition_products = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Productos de Descomposición Peligrosos")
     )
 
@@ -255,45 +276,54 @@ class MSDS(models.Model):
     inhalation_route = models.TextField(
         blank=True, null=True, 
         verbose_name=_("Vía de Exposición: Inhalación"),
+        max_length=1000,
         help_text=_("Información sobre la probabilidad de exposición por inhalación.")
     )
     ingestion_route = models.TextField(
         blank=True, null=True, 
         verbose_name=_("Vía de Exposición: Ingestión"),
+        max_length=1000,
         help_text=_("Información sobre la probabilidad de exposición por ingestión.")
     )
     skin_contact_route = models.TextField(
         blank=True, null=True, 
         verbose_name=_("Vía de Exposición: Contacto con la Piel"),
+        max_length=1000,
         help_text=_("Información sobre la probabilidad de exposición por contacto con la piel.")
     )
     eye_contact_route = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Vía de Exposición: Contacto con los Ojos"),
         help_text=_("Información sobre la probabilidad de exposición por contacto con los ojos.")
     )
     symptoms = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Síntomas Relacionados con las Características"),
         help_text=_("Síntomas relacionados con las características físicas, químicas y toxicológicas.")
     )
     delayed_effects = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Efectos Retardados"),
         help_text=_("Información sobre los efectos retardados de la exposición.")
     )
     immediate_effects = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Efectos Inmediatos"),
         help_text=_("Información sobre los efectos inmediatos de la exposición.")
     )
     chronic_effects = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Efectos Crónicos"),
         help_text=_("Información sobre los efectos crónicos de la exposición a corto y largo plazo.")
     )
     acute_toxicity_estimates = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Estimaciones de Toxicidad Aguda"),
         help_text=_("Medidas numéricas de toxicidad, como estimaciones de toxicidad aguda.")
     )
@@ -301,28 +331,34 @@ class MSDS(models.Model):
     # Section 12: Ecological Information (non-mandatory)
     ecotoxicity = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Ecotoxicidad")
     )
     persistence_and_degradability = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Persistencia y Degradabilidad")
     )
     bioaccumulative_potential = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Potencial de Bioacumulación")
     )
     mobility_in_soil = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Movilidad en el Suelo")
     )
     other_adverse_effects = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Otros Efectos Adversos")
     )
 
     # Section 13: Disposal Considerations (non-mandatory)
     disposal_methods = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Métodos de Eliminación")
     )
 
@@ -345,14 +381,17 @@ class MSDS(models.Model):
     )
     environmental_hazards = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Peligros Ambientales")
     )
     special_precautions = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Precauciones Especiales")
     )
     transport_in_bulk = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Transporte a Granel")
     )
     UN_picto = models.TextField(
@@ -363,6 +402,7 @@ class MSDS(models.Model):
     # Section 15: Regulatory Information (non-mandatory)
     safety_health_environmental_regulations = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Regulaciones de Seguridad, Salud y Medio Ambiente")
     )
 
@@ -381,10 +421,12 @@ class MSDS(models.Model):
     )
     disclaimer = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Descargo de Responsabilidad")
     )
     other_information = models.TextField(
         blank=True, null=True, 
+        max_length=1000,
         verbose_name=_("Otra Información")
     )
 
@@ -403,7 +445,7 @@ class Chemical(models.Model):
         verbose_name=_("Cuadro de constantes")
     )
     cas_number = models.CharField(
-        max_length=50,
+        max_length=20,
         verbose_name=_("Número CAS"),
         blank=True,
         null=True

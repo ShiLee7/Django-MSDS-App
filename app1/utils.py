@@ -132,40 +132,44 @@ def get_signal_word(cid):
 
 def get_p_codes(cid):
     try:
-        # Fetch annotations
         annotations = Annotations().get_compound_annotations(cid, heading='GHS Classification')
 
-        # Ensure annotations have enough data
-        if annotations.shape[0] > 4 and annotations.shape[1] > 0:
-            p_codes = annotations.iloc[4, 0]
-        else:
-            logger.warning(f"P-codes not found in annotations for CID {cid}")
+        if annotations.empty:
+            logger.warning(f"No annotations found for CID {cid}")
             return None
 
-        # Clean and split P-codes
-        p_codes_cleaned = p_codes.replace(';', ',').replace(' and ', ', ')
-        p_codes_list = [code.strip() for code in p_codes_cleaned.split(',')]
+        p_codes_found = set()
 
-        # Initialize dictionaries
+        for row in annotations.itertuples(index=False):
+            for cell in row:
+                if isinstance(cell, str):
+                    # Captura Pxxx o compuestos Pxxx+Pyyy+Pzzz
+                    matches = re.findall(r'\bP\d{3}(?:\+\d{3})*\b', cell)
+                    p_codes_found.update(matches)
+
+        if not p_codes_found:
+            logger.warning(f"No P-codes detected for CID {cid}")
+            return None
+
+        # Inicializar categorías
         general_p = {}
         prevention_p = {}
         response_p = {}
         storage_p = {}
-        dispose_p = {}
+        disposal_p = {}
 
         def find_p_code_description(p_code):
             for category in PRECAUTIONARY_STATEMENTS.values():
                 if p_code in category:
                     return category[p_code]
-            return ''  # If not found
+            return ''
 
-        for p_code in p_codes_list:
-            # Correct regex matching
-            match = re.match(r'P(\d+)', p_code)
+        for p_code in sorted(p_codes_found):
+            # Para determinar la categoría tomamos el primer número
+            match = re.match(r'P(\d{3})', p_code)
             if match:
                 prefix_number = match.group(1)
-                group_prefix = prefix_number[0]  # First digit
-                # Find description
+                group_prefix = prefix_number[0]
                 description = find_p_code_description(p_code)
                 if description:
                     if group_prefix == '1':
@@ -177,19 +181,18 @@ def get_p_codes(cid):
                     elif group_prefix == '4':
                         storage_p[p_code] = description
                     elif group_prefix == '5':
-                        dispose_p[p_code] = description
+                        disposal_p[p_code] = description
                 else:
                     logger.warning(f"Description not found for P-code: {p_code}")
             else:
                 logger.warning(f"Invalid P-code format: {p_code}")
 
-        # Combine all codes
         all_codes = {
             'general': general_p,
             'prevention': prevention_p,
             'response': response_p,
             'storage': storage_p,
-            'disposal': dispose_p,
+            'disposal': disposal_p,
         }
 
         logger.debug(f"P-codes categorized: {all_codes}")
@@ -199,26 +202,31 @@ def get_p_codes(cid):
         logger.error(f"Error fetching P-codes for CID {cid}: {e}")
         return None
 
+
 def get_h_codes(cid):
     try:
-        # Fetch annotations
+        # Obtiene la tabla completa de anotaciones
         annotations = Annotations().get_compound_annotations(cid, heading='GHS Classification')
 
-        # Ensure annotations have enough data
-        if annotations.shape[0] > 3 and annotations.shape[1] > 0:
-            h_codes = annotations.iloc[3, 0]
-        else:
-            logger.warning(f"H-codes not found in annotations for CID {cid}")
+        if annotations.empty:
+            logger.warning(f"No annotations found for CID {cid}")
             return None
 
-        # Clean and split H-codes
-        h_codes_cleaned = [
-            re.sub(r"\s*\(.*?\)", "", part.strip())
-            for part in h_codes.split(';') if part.strip()
-        ]
+        # Buscamos cualquier texto tipo Hxxx en todas las celdas
+        h_codes_found = set()  # para no repetirlos
+        for row in annotations.itertuples(index=False):
+            for cell in row:
+                if isinstance(cell, str):
+                    matches = re.findall(r'\bH\d{3}\b', cell)
+                    h_codes_found.update(matches)
 
-        logger.debug(f"H-codes categorized: {h_codes_cleaned}")
-        return h_codes_cleaned
+        if not h_codes_found:
+            logger.warning(f"No H-codes detected for CID {cid}")
+            return None
+        
+        sorted_codes = sorted(h_codes_found)
+        logger.debug(f"H-codes found: {sorted_codes}")
+        return sorted_codes
     
     except Exception as e:
         logger.error(f"Error fetching H-codes for CID {cid}: {e}")
