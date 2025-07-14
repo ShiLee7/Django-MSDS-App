@@ -1,6 +1,26 @@
 {% extends 'layout.html' %}
 {% load i18n %}
 
+{% block extra_head %}
+  <!-- Google tag (gtag.js) event - delayed navigation helper -->
+  <script>
+    // Helper to delay navigation until the gtag event fires
+    function gtagSendEvent(url) {
+      var callback = function () {
+        if (typeof url === 'string') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion_event_engagement', {
+        'event_callback': callback,
+        'event_timeout': 2000
+        // aquí podrías agregar más parámetros de evento
+      });
+      return false;
+    }
+  </script>
+{% endblock %}
+
 {% block body %}
   <div class="section-container text-center">
     <form method="post">
@@ -17,16 +37,18 @@
 
       <!-- Navigation Buttons -->
       <div class="form-navigation">
-        {% if wizard.steps.prev %}
-          <button type="submit" name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="btn btn-custom">{% trans 'Anterior' %}</button>
-        {% endif %}
-        <button type="submit" class="btn btn-custom">
-          {% if wizard.steps.next %}
+        {% if wizard.steps.next %}
+          <button type="submit" class="btn btn-custom">
             {% trans 'Siguiente' %}
-          {% else %}
+          </button>
+        {% else %}
+          <button
+            type="button"
+            class="btn btn-custom"
+            onclick="return gtagSendEvent(window.location.href);">
             {% trans 'Enviar' %}
-          {% endif %}
-        </button>
+          </button>
+        {% endif %}
       </div>
     </form>
   </div>

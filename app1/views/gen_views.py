@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .contact_view import contact_section
+from django.http import HttpResponse
 
 def home(request):
     form, success, error = contact_section(request)
@@ -36,3 +37,12 @@ def regulatory(request):
     return render(request, 'regulatory.html', {
         "form": form, "success": success, "error": error, "show_contact": True
     })
+
+
+def ads_txt(request):
+    content = "google.com, pub-8106330365486911, DIRECT, f08c47fec0942fa0"
+    return HttpResponse(content, content_type="text/plain")
+
+def robots_txt(request):
+    content = "User-agent: *\nAllow: /\nSitemap: https://extracsol.com/sitemap.xml"
+    return HttpResponse(content, content_type="text/plain")

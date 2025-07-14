@@ -20,6 +20,13 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.i18n import set_language
 from django.http import JsonResponse
 from django.views.i18n import JavaScriptCatalog
+from django.contrib.sitemaps.views import sitemap
+from app1.sitemaps import StaticViewSitemap
+from app1.views import ads_txt, robots_txt
+
+sitemaps = {
+    'static': StaticViewSitemap,
+}
 
 def health_check(request):
     return JsonResponse({"status": "ok"}, status=200)
@@ -29,6 +36,9 @@ urlpatterns = [
     # Path for setting the language
     path('i18n/set_language/', set_language, name='set_language'),
     path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap",),
+    path("ads.txt", ads_txt, name="ads-txt"),
+	path('robots.txt', robots_txt, name='robots-txt')
 ]
 
 # Wrap app URLs in i18n_patterns for multilingual support

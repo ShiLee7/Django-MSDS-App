@@ -69,3 +69,5 @@ entrypoint.prod.sh
 .dockerignore
 Dockerfile
 Dockerfile.prod
+
+*.txt
